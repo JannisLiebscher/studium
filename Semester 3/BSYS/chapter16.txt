@@ -1,0 +1,39 @@
+Chapter16
+
+1)
+Adress Space = 2x 64 (Da 128)
+Phsys mem Size = 512
+
+Decimal 108: 108 - 64 (MaxSize) = 44
+Offset: 44 - 64(MaxSize) = -20
+
+Segmet 1 Limit = 20 = PA
+
+
+PA Seg1(499)
+SegFault(2)
+Segfault(2)
+PA Seg1(499)
+SegFault(0)
+
+
+2)
+
+Highest Legal Virtual Adress Seg0 = 19			Seg0 von 0-19
+Lowest Legal  Virtual Adress Seg1 = 128 - 20 = 108		Seg1 von 492-511
+
+Highest Illegal Adress = 491
+Lowest  Illegal Adress = 20
+
+3)
+
+
+python3 ./segmentation.py -a 16 -p 128 -A 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 --b0 0 --l0 2 --b1 0 --l1 2 -c
+
+4)
+
+Das Limit auf 0,9x MaxSegmetGroeße (z.B. 128 AdressSpace = 64 MaxSize)!
+
+
+5)
+Ja, Limit auf 0 setzen!

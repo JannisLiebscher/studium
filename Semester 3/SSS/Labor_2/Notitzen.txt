@@ -1,0 +1,17 @@
+-------Aufgabe 1-------
+1. aufnahme.py, Grauwerte
+2. Aufgabe1.py, Output
+3. Aufgabe1.py
+-------Aufgabe 2-------
+1. aufnahme.py, Schwarzbilder
+2. Aufgabe2.2.py, DarkAverage.png(alle sehr einheitlich auf 73)
+3. Aufgabe2.3.py, Korrigiert.png/KorrigiertManuell.png
+-------Aufgabe 3-------
+1. aufnahme.py, Weißbilder
+2. Aufgabe3.2.py, WhiteAverage.png, WhiteAverageContrast.png(funktioniert nicht)
+3. Aufgabe2.3.py, KorrigiertKomplett.png(komisches muster wie normiertes Bild)
+-------Aufgabe 4-------
+1. Sowohl auf Schwarz- als auf Weißbilde keine Pixelfehler zu erkennen
+   dead.png als beispiel, wie ein dead pixel auffallen würde
+2: KorrigiertKomplett.png, sieht sehr merkwürdig aus
+3: Da es keine Pixelfehler gibt verändert sich das Bild nicht

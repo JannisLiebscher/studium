@@ -1,0 +1,64 @@
+CHAPTER 8
+
+1)
+-j = Anzahl der Jobs (-j 3)
+-n = Anzahl der QueueLevels (-n 2)
+-m = Maximale Laufzeit eines Jobs
+-M = Frequenz der I/O Zugriffe (-M 0) 0% Zugriffchance
+-Q = Länge der Time Slices für jedes Quantum level x,y,z => höchste zu niedrigste Zeit
+-S = Aktiviert Rule 4a & 4b
+     => Wenn der time slice ned voll genutzt wird, bleibt die prio
+     => Wenn er genutzt wird eine prio runter
+
+python3 ./mlfq.py -j 2 -n 2 -m 10 -M 0
+
+2)
+-l x1,y1,z1:x2,y2,z2: => .... geht weiter mit x3 ..
+x = start time
+y = run time
+z = How often I/O request
+
+-i = Wie lange dauert I/O
+______________________________
+Example 1:
+python3 mlfq.py -n 3 -l 0,200,0 -c
+
+Example 2:
+python mlfq.py -n 3 -l 0,200,0:100,20,0 -c
+
+Example 3:
+python mlfq.py -n 3 -i 9 -l 0,200,0:5,15,1 -c
+
+Example 3(Starvation):
+python mlfq.py -n 3 -i 9 -l 0,200,0:100,150,9:100,150,9 -c -S
+
+Example3(Boost):
+python mlfq.py -n 3 -i 9 -l 0,200,0:100,150,9:100,150,9 -c -S -B 100
+		Boost hält nicht an, Prozesse mit I/O fallen auf Priorität 1 statt auf 2 zu bleiben.Boost kann nicht so eingestellt werden wie im beispiel
+		(alle 50ms, erst ab 100 m)
+
+Example 3(fig 8.6 Gaming):
+python mlfq.py -n 3 -i 1 -l 0,250,0:80,90,9 -c -S
+
+Example 3(fig 8.6 Anti Gaming):
+python mlfq.py -n 3 -i 1 -l 0,250,0:80,90,9 -c
+
+Example 3(fig 8.7):
+python mlfq.py -n 3 -l 0,140,0:0,140,0 -c -Q 10,20,40 -a 2
+
+
+3)
+Man kann -n 1 (Anzahl der QueueLevels) auf 1 setzten! Nur 1 Level = RoundRobin
+
+4)
+
+python mlfq.py -n 3 -i 1 -l 0,250,0:80,90,9 -c -S
+
+5) alle 200 ms -> nach 200 ms 1 time slice(10 ms) in der höchsten queue = 10/200 = 0.05 = 5%
+
+6)
+Wenn wir -I Flag setzten dann wird der Job am Kopf der Liste Platziert.
+python mlfq.py -n 1 -i 5 -l 0,200,0:0,30,1 -c -I
+ohne -I muss pro 1(viele I/O´s) warten bis pro 0(keine I/O´s) einen timeslice aufbraucht -> viel cpu idle wenn pro 0 fertig ist und pro 1 weitere i/O´s macht
+mit -I pro 1 macht regelmäßig I/Os -> bessere auslastung
+j0,j1 turnaround 219/280 vs 230/185 (mit -I)

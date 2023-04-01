@@ -1,0 +1,59 @@
+1. ./multi.py -n1 -L a:30:200
+
+-> 1 Job mit 30ms Zeitaufwand + (working set size > cache size) -> dauert 30ms
+
+
+2. python ./multi.py -n 1 -L a:30:200-M 300 -c
+
+-> dauert nur noch 20ms (10ms warmup time + 10ms mit 2x Geschwindigkeit (cache warm))
+
+
+3. Mit -T flag sieht man, dass nachdem der cache gefüllt wurde (warm) die verbleibende Zeit doppelt so schnell abnimmt (d.h. doppelt so schnelle Arbeit)
+
+
+4. Mit -C flag sieht man, ab wann der Cache warm ist, dass passiert in dem 10. time step, da warmup time auf 10 gestellt ist. (default)
+
+
+5. Da mit round robin innerhalb einer Queue, gemeinsam für beide CPUs gescheduled wird, dauert es 150ms (sum(run_time)=300 geteilt durch 2 CPUs).
+
+Mit der -T und -C Flag sieht man, dass immer im 10. time step, direkt bevor der jw job gedescheduled wird der jw cache warm ist, und dann auch warm bleibt, bis der nächste job seine daten im letzten step reingeschrieben hat. AUßER bei job b und c, da diese nebeneinander im Cache existieren können(jeweils nur halbe cache size als working set size benötigt.)
+
+
+6. python ./multi.py -n 2 -L a:100:100,b:100:50,c:100:50 -A a:0,b:1,c:1 -T -C -c
+
+      	CPU 0: 20 + 180/2 = 110ms
+	CPU 1: 10 + 90/2 = 55ms  -> gesamtzeit 110ms
+
+Diese Variante läuftschneller, da die beiden jobs b & c zeitgleich ihre daten in den cache laden können und somit der cache für beide jobs warm ist, job a wird ohnehin nicht descheduled und ist somit sogar noch schneller fertig. 
+
+Eine bessere Variante gibt es nicht, da keiner der beiden jobs eine working size hat, die gemeinsam mit der von job a in den cache passt.
+
+Alles andere wäre langsamer e.g 200 time slices!
+
+7. python ./multi.py -n 3 -L a:100:100,b:100:100,c:100:100 -M 100 -T -C -c
+
+
+Mit einer cache size von 50 (-M 50):
+	immer gesamtzeit durch anzahl der CPUs, wie in Aufgabe 5.
+	-> -n1 : 300ms | -n2: 150ms | -n3: 100ms
+
+Mit einer cache size von 100:
+	bei einem und zwei CPUs wieder die gleichen ergebnisse, da auf einer Queue mit round robin gescheduled wird, und somit nie ein cache warm wird.
+	bei 3 CPUs dauert es nur noch 55ms, da jeder job seinen eigenen CPU hat und diesmal die working size der jobs nicht größer ist als die cache size -> 10ms + 90/2ms = 55ms.
+
+
+8. python ./multi.py -n 2 -L a:100:100,b:100:50,c:100:50 -p -T -C -c
+
+Der Job, der alleine ein CPU bekommt ist nach 55ms fertig.
+Wenn -P (peek interval) so eingestellt ist, dass kurz nach time step 55 gepeekt wird, dann ist es ideal. 10ms + 90/2 = 55ms -> Es wird trotzdem erst nach 60ms der job auf die leere CPU geholt.
+
+Zusätzlich geht es noch schneller wenn zufällig die beiden jobs mit working set 50 auf eine CPU kommen, was zufällig gerade bei -P 1 und 5 der Fall ist. (Diese sind dann bei 60ms schon weiter fortgeschritten, da der cache nach 10 bzw 20ms warm war.)
+
+(mit zB -P 1 oder -P 5 ist der sim nach 90ms fertig)
+Mit -P 10, 20, 30, 60 ist der sim nach 100ms fertig. 
+
+
+Mit einer CPU dauert es wieder 300ms
+Mit zwei je nach peek interval 90ms oder 100ms oder wenn peek intervall = 40/50/70 dann noch höher.
+
+Auf 3 CPUs dauert es wieder nur 55ms, da jeder job seinen eigenen CPU hat.

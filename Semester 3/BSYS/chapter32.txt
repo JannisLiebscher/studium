@@ -1,0 +1,70 @@
+1) How does the output change from run to run?
+=> Es ist jeweils das selbe T1 add -> <-
+					T2 add -> <-
+					
+Jedoch sollte das ausführen der Threads >>nicht deterministisch<< sein!
+
+2)What happens? Does the code (always) deadlock?
+
+Mit -v Verbose mode nicht, ohne schon recht häufig! 
+
+3)
+Mit -n = 0 oder 1, können keine Deadlocks entstehen!
+
+
+4)
+Die Ordnung im Speicher ist wichtig. Es wird immer zuerst das lock, das "vorne" im Speicher liegt, genommen!
+Wenn vector dst == vector src, sollte nur 1 lock geholt werden, sonst deadlockt er sich selbst!
+
+
+5) 		>>> GLOBAL ORDER APPROACH <<<
+
+	-n = 2 Threads
+-100k  = 0.03sec
+-1mio  = 0.34sec
+-10mio = 3.51sec
+	
+
+==> je mehr loops desto länger dauert es!
+
+6) -p enabled
+
+=> Jeder Thread hat sein eigenes lock, deshalb sollte sich die Zeit verkürzen
+=> Keine Inteferenz zwischen den Threads/locks
+
+	-n = 2 Threads
+-100k  = 0.01sec
+-1mio  = 0.15sec
+-10mio = 1.49sec
+
+Die Zeit verkürzt sich drastisch (ca die hälfte)!
+
+7)
+	-n = 2 Threads
+-100k = 0.12sec // 685454 retries
+-1mio = 1.16sec // 4694798 retries
+
+	-n = 4 Threads
+-50k = 0.31sec // 1223559 retries
+-500k= 2.93sec // 12021897 retries
+=> Es dauert länger
+
+8) >> vector-avoid-hold-and-wait <<
+=> Problem with this Approach
+Durch das Globale Lock sinkt scalability
+
+9) >> vector-nolock <<
+Es wird die Atomare Operation "Fetch-and-add" verwendet, somit braucht man keine locks.
+=> Deadlock free
+=> Für Vectoren mit mehr als 1 Wert, ist keine Mutex sichergestellt! (Interrupt zwischen dem adden mehrerer Werte im Vector)
+
+9)
+./vector-nolock -t -n 2 -l 100k -d
+0.13sec
+./vector-nolock -t -n 2 -l 1mio -d
+1.35sec
+./vector-nolock -t -n 2 -l 100k -d -p
+0.06 seconds
+./vector-nolock -t -n 2 -l 1mio -d -p
+0.64 seconds
+

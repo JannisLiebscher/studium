@@ -1,0 +1,45 @@
+1)
+Size: 100
+baseAddr: 1000
+
+Alloc(3) = Alloced => 1003
+Free(ptr[0]) = Fragmet 1000-1003 // 1003 - w/e!
+
+
+
+2)
+Bei Worst Fit wird immer im großen Chunk neuen Speicher allociert!
+
+
+
+
+3)
+First Fit
+
+=> "searched elements" ist bei First fit geringer
+
+
+4)
+
+AdressSort = Die Freelist wird nach den Adressen geordnet
+Sizesort+ = Die kleinsten Chunks zuerst dann immer größer
+Sizesort- = Die größten Chunks zuerst dann immer kleiner
+
+Bei Sizesort- => Dicke Chunks zuerst garantiert das >>FIRST FIT<< immer gleich im großen Chunk landet!
+WORST & BEST FIT => Egal da eh alles durchsucht werden muss!
+
+5)
+
+Bei -P 90 Ist die FreeList iwann leer. Alloc returned -1 da kein Platz mehr*
+Bei -P 10 Ist die Freelist Fragmentiert da immer wieder allokierter Speicher gefreed wird.
+
+
+6)
+
+-A FLAG: +10 (Alloc(10)), -0 (ptr[0])
+-A +20,-0,+10,-1,+30,-2 ...
+
+Highly Fragmented FreeList:
+
+python3 ./malloc.py -A +1,-0,+2,-1,+3,-2,+4,-3,+5,-4,+6,-5,+7,-6,+8,-7 -c
+

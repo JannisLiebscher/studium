@@ -1,0 +1,26 @@
+CHAPTER 9
+
+1)
+-j = Anzahl der Jobs
+-T = Maximum Ticket Value
+
+2)
+python3 ./lottery.py -l 10:1,10:100 -c
+
+Job 1 wird in 100/101 Fällen zuerst ausgeführt. Lower Tickets haben pech!
+
+3)
+python3 ./lottery.py -j 2 -l 100:100,100:100 -c -s 10
+Job 0 Done = 197time
+Job 1 Done = 200 time
+Fairness Metric = 197/200 = 0,98 => Fair
+je länger die jobs, desto fairer der scheduler
+
+4)
+python3 ./lottery.py -j 2 -l 100:100,100:100 -c -q 10 -s 10
+Job 0 Done = 180time
+Job 1 Done = 200time
+Fairness Metic = 180/200 = 0,9
+
+=> Mit Steigernder quantum size, wird es immer Unfairer!
+eine win-streak wirkt sich stärker aus 

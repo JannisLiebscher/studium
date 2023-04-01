@@ -1,0 +1,32 @@
+Chapter 14
+
+1)
+Speicherzugriffsfehler (Segmentation fault)
+
+2)
+Program received signal SIGSEGV, Segmentation fault.
+0x00005555555551b4 in main()
+
+3)
+total heap usage: 1 allocs, 0 frees!
+4bytes gehen verloren
+
+4)
+Das Programm läuft normal!
+GNU: 		lässt sich kein Problem finden.
+Valgrind:	1alloc 0 free
+
+5)
+GNU: 		lässt sich kein Problem finden.
+Valgrind: 	Man schreibt hinter den allokierten Speicherbereich.
+
+6)
+Programm läuft & es wird "0" geprintet.
+GNU:		Absolut useless
+Valgrind: 	Zeigt wo der Block allokiert wurde, sowie wo er gefreed wurde.
+
+7)
+Valgrind zeigt das free(data[10]) in einem allokierten Block ist und somit nicht gültig!
+
+8)
+

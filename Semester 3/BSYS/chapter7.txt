@@ -1,0 +1,37 @@
+CHAPTER 7
+1)
+-j = Jobs
+-s = Seed
+-l = length (-l 200,200,200)
+-p = Scheduling Verfahren
+-q = RoundRobin Zeit für jeden Prozess ( -q 50 = 50sec)
+-h = list of all commands
+
+python3 ./scheduler.py -p SJF -j 3 -l 200,200,200
+Job 0 (length = 200)
+Job 1 (length = 200)
+Job 2 (length = 200)
+
+	Response Time /// Turnaround Time /// Wait Time
+Job 0		0sec		200sec		0sec
+Job 1		200sec		400sec		200sec
+Job 2		400sec		600sec		400sec
+
+4)
+Für Jobs mit der selben länge bzw "richtige" jobreihenfolge
+=> ./scheduler.py -p FIFO -l 100,100,100 -c
+=> ./scheduler.py -p SJF -l 100,100,100 -c
+
+5)
+Wenn die länge aller Jobs in SJF gleich sind, sowie die queue time die selbe Zeit hat
+=> SJF - l 100,100,100
+=> RR -q 100
+
+6)
+Je länger die Job length desto länger die avg response time
+=> Response Time steigt linear zur job length
+
+7)
+WorstCaseResponseTime = (n-1) * q
+avg = WorstCaseResponseTime / 2
+

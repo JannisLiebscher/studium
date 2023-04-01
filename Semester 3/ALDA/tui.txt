@@ -1,0 +1,113 @@
+package dictionary;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.util.Scanner;
+
+public class wörterbuch {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Dictionary<String, String> dict = new SortedArrayDictionary();
+        String dateiname;
+        Integer n = null;
+        String[] s = new String[3];
+        while (true) {
+            s[0] = scanner.next();
+            s[1] = scanner.next();
+            s[2] = scanner.next();
+
+            switch (s[0]) {
+                case "create":
+                    switch (s[1]) {
+                        case "HashDictionary":
+                            dict = new HashDictionary<String, String>(3);
+                            break;
+                        case "BinaryTreeDictionary":
+                            dict = new BinaryTreeDictionary<String, String>();
+                            break;
+                        default:
+                            dict = new SortedArrayDictionary<String, String>();
+                            break;
+                    }
+                case "read":
+                    if (isInt(s[1])) {
+                        n = Integer.parseInt(s[1]);
+                        dateiname = s[2];
+                    } else {
+                        dateiname = s[1];
+                    }
+                    try {
+                        einlesen(dict, n, dateiname);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case "p":
+                    for (Dictionary.Entry<String, String> e : dict) {
+                        System.out.println(e.getKey() + ": " + e.getValue() + " search: " + dict.search(e.getKey()));
+                    }
+                    break;
+                case "s":
+                    System.out.println("search: " + dict.search(s[1]));
+                    break;
+                case "i":
+                    System.out.println("old value: " + dict.insert(s[1], s[2]));
+                    break;
+                case "r":
+                    System.out.println("old value: " + dict.remove(s[1]));
+                    break;
+                case "exit":
+                    return;
+                default:
+                    System.out.println("command not found");
+                    break;
+
+
+            }
+        }
+    }
+    private static boolean isInt(String s) {
+        try {
+            int x = Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+    private static void einlesen(Dictionary dict, Integer n, String filename) throws FileNotFoundException, IOException {
+        LineNumberReader in;
+        in = new LineNumberReader(new FileReader(filename));
+        String line;
+        String[] words;
+        String[] keyVal = new String[2];
+
+
+        if (n == null) {
+            // Text einlesen und Häfigkeiten aller Wörter bestimmen:
+            while ((line = in.readLine()) != null) {
+                words = line.split("\\?\\n");
+                for (String w : words) {
+                    if (w.length() == 0 || w.length() == 1)
+                        continue;
+                    keyVal = w.split("\\s+");
+                    dict.insert(keyVal[0], keyVal[1]);
+                }
+            }
+        } else {
+            for (int i = 0; i < n; i++) {
+                if ((line = in.readLine()) == null) {
+                    break;
+                }
+                words = line.split("\\?\\n");
+                for (String w : words) {
+                    if (w.length() == 0 || w.length() == 1)
+                        continue;
+                    keyVal = w.split("\\s+");
+                    dict.insert(keyVal[0], keyVal[1]);
+                }
+            }
+        }
+    }
+}
