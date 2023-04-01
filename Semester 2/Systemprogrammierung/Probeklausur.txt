@@ -1,0 +1,73 @@
+#ifndef QUADRAT_H
+#define QUADRAT_H
+
+double flaeche(double);
+double zumquadrat(const double);
+
+#endif
+-----------------------------------------
+#include "Quadrat.h"
+
+double flaeche(double seitenlaenge)
+{
+return zumquadrat(seitenlaenge);
+}
+double zumquadrat(const double d)
+{
+return d * d;
+}
+---------------------------------------------
+#infdef WUERFEL_H
+#define WUERFEL_H
+
+double oberflaeche(double);
+double volumen(const double);
+
+#endif
+------------------------------------------
+#include "Quadrat.h"
+#include "Wuerfel.h"
+
+double oberflaeche(double kantenlaenge)
+{
+return flaeche(kantenlaenge) * 6;
+}
+double volumen(double kantenlaenge) 
+{
+return flaeche(kantenlaenge) * kantenlaenge;
+}
+------------------------------------
+#include <stdio.h>
+#include "Quadrat.h"
+
+int main(int argc, char *argv[])
+{
+if (arc != 2)
+{
+fprintf(stderr, "ERROR\n")
+return 1
+}
+
+double k;
+sscanf(argv[1], %lf, &k);
+double f = oberflaeche(k);
+double v = volumen(k);
+printf("Kantenlaenge %f, Oberflaeche %f, Volumen %f\n", k, f, v);
+}
+
+c)
+in argv steht null, wenn in "zumquadrat" null * null gerechnet wird sollte das programm abstürzen
+
+----------------------------------------------------------------
+Aufgabe 4
+
+int main(int arc, char[] *argv)
+{
+const char *s = argv[1];
+const char *t = argv[2];
+
+const char *st = (char*) malloc(sizeof s + strlen(t));
+st = strcat(strcpy(st, s), t);
+-----------------------------------------------------------------
+Aufgabe 5
+

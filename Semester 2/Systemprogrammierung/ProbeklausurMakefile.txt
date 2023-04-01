@@ -1,0 +1,23 @@
+#Makefile
+
+#Kommandovariablen
+TEXCONVERT = pdflatex
+RM = rm -f
+
+#Hilfsvariablen
+NAME = hello
+TARGET = $(NAME).pdf
+
+.PHONY: all clean
+
+all: $(TARGET)
+
+clean: 
+	$(RM) $(TARGET) $(NAME).aux $(NAME).log
+
+
+#Musterregel
+
+%.pdf: %.tex
+	$(TEXCONVERT)  $<
+	

@@ -1,0 +1,69 @@
+---------------------------------Beispiel 1-------------------------------------
+f:
+	addi $sp $sp, -50	# platz für array
+	addi $t0, $sp, 0	# Adresse array
+	addi $t1, $a0, 5	# t1 = y + 5
+	sw $t1, 0($t0)		# A[0] = t1
+	addi $t1, $zero, 1	# t1 = j = 1
+
+	while:
+		addi $t9, $zero, 50
+		beq $t1, $t9, end	# j < 50
+		addi $t2, $t1, -1	# j -1
+		sll $t2, $t2, 2		# t2(j-1) * 4
+		add $t2, $t2, $t0	# t2 = t2 + Arrayadresse
+		lw $t3, 0($t2)		# t3 = A[j-1]
+		add $t2, $t3, $a1	# t2 = t3 + c
+		sll $t4, $t1, 2		# j * 4
+		add $t4, $t4, $t0	# t4 = t4 + Arrayadresse
+		sw $t2, 0($t4)		# A[j] = A[j-1] + c
+		add $t1, $t1, 1		# j = j + 1
+		j while
+
+	end:
+
+	add $t1, $zero, 196	# Index 49
+	add $t1, $t1, $t0	# t1 = t1 + Arrayadresse	
+	lw $v0, 0($t1)		#return = A[t1] = A[49]
+	addi $sp, $sp, 200	# Stack freigeben
+	jr $ra 
+
+-----------------------------------Beispiel 2--------------------------------------
+
+
+	f:	
+	addi $sp, $sp, -24
+	sw $s0, 0($sp)
+	sw $s1, 4($sp)
+	sw $a0, 8($sp)
+	sw $a1, 12($sp)
+	sw $a2, 16($sp)
+	sw $a3, 20($sp)
+	
+	addi $s0, $a2, 8	#s0 = m = b + 8
+	
+	lw $t0, 12($sp)		#Argument 1 = a1 = j
+	addi $a0, $t0, 0	#				
+	lw $t0, 20($sp)		#Argument 2 = a3 = i
+	addi $a1, $t0, 0	#
+	jal R			
+	addi $s1, $v0, 0	#s1 = r(j, i)
+	
+	lw $t0, 20($sp)		#Argument 1 = i
+	addi $a0, $t0, 0	#				
+	lw $t0, 12($sp)		#Argument 2 = j
+	addi $a1, $t0, 0	#
+	jal T
+	
+	add $t0, $v0, $s1	# t0 = t(i, j) + r(j, i)
+	add $s0, $t0, $s0	# m = t0 + m
+	sll $s0, $s0, 4		#m = m * 4
+	lw $t0, 8($sp)		#t0 = Arayadresse
+	add $t0, $t0, $s0	#t0 = Arrayadresse + m * 4 = A[m]
+	lw $v0, 0($t0)		#return = A[m]
+	
+	lw $s0, 0($sp)		#s0 wiederherstellen
+	lw $s1, 4($sp)		#s1 wiederherstellen
+	addi $sp, $sp, 24	#Stack freigeben
+	jr $ra
+
