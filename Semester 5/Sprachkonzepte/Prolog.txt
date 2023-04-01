@@ -1,0 +1,51 @@
+zug(konstanz, 08.39, offenburg, 10.59).
+zug(konstanz, 08.39, karlsruhe, 11.49).
+zug(konstanz, 08.53, singen, 09.26).
+zug(singen, 09.37, stuttgart, 11.32).
+zug(offenburg, 11.29, mannheim, 12.24).
+zug(karlsruhe, 12.06, mainz, 13.47).
+zug(stuttgart, 11.51, mannheim, 12.28).
+zug(mannheim, 12.39, mainz, 13.18).
+
+verbindung(Start, End, Route) :-
+    verbindung(Start, End, [Start], Route).
+
+verbindung(Start, End, Visited, [(Start, End, Dep, Arr)|Visited]) :-
+    zug(Start, Dep, End, Arr).
+
+verbindung(Start, End, Visited, Route) :-
+    zug(Start, Dep, Zwischen, Arr),
+    \+ member((Zwischen, _, _, _), Visited),
+    verbindung(Zwischen, End, [(Zwischen, _, Dep, Arr)|Visited], Route).
+
+
+2. Lösung
+
+zug(konstanz, 08.39, offenburg, 10.59).
+zug(konstanz, 08.39, karlsruhe, 11.49).
+zug(konstanz, 08.53, singen, 09.26).
+zug(singen, 09.37, stuttgart, 11.32).
+zug(offenburg, 11.29, mannheim, 12.24).
+zug(karlsruhe, 12.06, mainz, 13.47).
+zug(stuttgart, 11.51, mannheim, 12.28).
+zug(mannheim, 12.39, mainz, 13.18).
+
+
+% verbindung(+Start, +Destination, -Routes)
+% This predicate finds all routes between Start and Destination and
+% unifies Routes with a list of lists, each of which contains the train connections
+% and their departure and arrival times that make up a route.
+verbindung(Start, Destination, Routes) :-
+  % First, we find all connections from Start to an intermediate location
+  findall(Intermediate-Departure-Arrival, zug(Start, Departure, Intermediate, Arrival), Intermediates),
+  % Then, for each intermediate location, we find a connection to the Destination
+  findall(Route, (member(Intermediate-Departure-Arrival, Intermediates), zug(Intermediate, Departure2, Destination, Arrival2), Route = [Start-Departure-Intermediate-Departure2-Destination-Arrival2]), Routes).
+
+
+
+
+
+
+
+
+

