@@ -1,0 +1,8 @@
+NOTENSPIEGEL
+Test                    4,0    bestanden
+Bestnote                1,0    mit Bestnote bestanden
+Wirtschaft              5,0    nicht bestanden
+Englisch                2,7    bestanden
+Programmiertechnik      3,0    bestanden
+Betriebssysteme         2,3    bestanden
+Mathe                   1,7    bestanden

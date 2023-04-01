@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="Pot">
+            <graphics>
+                <position x="700.3846153846154" y="207.69230769230768"/>
+            </graphics>
+            <name>
+                <value>Pot</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Pot sperren">
+            <graphics>
+                <position x="700.3846153846154" y="494.6153846153845"/>
+            </graphics>
+            <name>
+                <value>Pot sperren</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Spieler 1">
+            <graphics>
+                <position x="415.38461538461536" y="267.6923076923076"/>
+            </graphics>
+            <name>
+                <value>Spieler 1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,3</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Spieler 2">
+            <graphics>
+                <position x="955.3846153846154" y="267.6923076923076"/>
+            </graphics>
+            <name>
+                <value>Spieler 2</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,3</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="Einsatz">
+            <graphics>
+                <position x="700.3846153846154" y="342.6923076923077"/>
+            </graphics>
+            <name>
+                <value>Einsatz</value>
+                <graphics>
+                    <offset x="-0.384615384615385" y="26.538461538461537"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>2.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="S1 gewinnt">
+            <graphics>
+                <position x="610.3846153846154" y="267.6923076923076"/>
+            </graphics>
+            <name>
+                <value>S1 gewinnt</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="S2 gewinnt">
+            <graphics>
+                <position x="790.3846153846154" y="267.6923076923076"/>
+            </graphics>
+            <name>
+                <value>S2 gewinnt</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="Einsatz to Pot" source="Einsatz" target="Pot">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="712" y="339" curvePoint="false"/>
+            <arcpath id="001" x="711" y="233" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Pot sperren to Einsatz" source="Pot sperren" target="Einsatz">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="711" y="490" curvePoint="false"/>
+            <arcpath id="001" x="711" y="369" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Pot to S1 gewinnt" source="Pot" target="S1 gewinnt">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="699" y="227" curvePoint="false"/>
+            <arcpath id="001" x="626" y="279" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Pot to S2 gewinnt" source="Pot" target="S2 gewinnt">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="723" y="227" curvePoint="false"/>
+            <arcpath id="001" x="796" y="279" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="S1 gewinnt to Pot sperren" source="S1 gewinnt" target="Pot sperren">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="621" y="293" curvePoint="false"/>
+            <arcpath id="001" x="705" y="492" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="S1 gewinnt to Spieler 1" source="S1 gewinnt" target="Spieler 1">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="616" y="279" curvePoint="false"/>
+            <arcpath id="001" x="441" y="279" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="S2 gewinnt to Pot sperren" source="S2 gewinnt" target="Pot sperren">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="801" y="293" curvePoint="false"/>
+            <arcpath id="001" x="717" y="492" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="S2 gewinnt to Spieler 2" source="S2 gewinnt" target="Spieler 2">
+            <graphics/>
+            <inscription>
+                <value>Default,2</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="806" y="279" curvePoint="false"/>
+            <arcpath id="001" x="951" y="278" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Spieler 1 to Einsatz" source="Spieler 1" target="Einsatz">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="440" y="283" curvePoint="false"/>
+            <arcpath id="001" x="706" y="354" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Spieler 2 to Einsatz" source="Spieler 2" target="Einsatz">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="952" y="283" curvePoint="false"/>
+            <arcpath id="001" x="716" y="353" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>

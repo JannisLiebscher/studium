@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="Gelb">
+            <graphics>
+                <position x="675.0" y="225.0"/>
+            </graphics>
+            <name>
+                <value>Gelb</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Grün">
+            <graphics>
+                <position x="540.0" y="480.0"/>
+            </graphics>
+            <name>
+                <value>Grün</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="loop">
+            <graphics>
+                <position x="465.0" y="225.0"/>
+            </graphics>
+            <name>
+                <value>loop</value>
+                <graphics>
+                    <offset x="44.0" y="-12.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Rot">
+            <graphics>
+                <position x="390.0" y="225.0"/>
+            </graphics>
+            <name>
+                <value>Rot</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Schalte Rot frei">
+            <graphics>
+                <position x="255.0" y="225.0"/>
+            </graphics>
+            <name>
+                <value>Schalte Rot frei</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="Schalte auf Gelb">
+            <graphics>
+                <position x="675.0" y="480.0"/>
+            </graphics>
+            <name>
+                <value>Schalte auf Gelb</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Schalte auf GelbRot">
+            <graphics>
+                <position x="540.0" y="225.0"/>
+            </graphics>
+            <name>
+                <value>Schalte auf GelbRot</value>
+                <graphics>
+                    <offset x="58.0" y="49.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Schalte auf Grün">
+            <graphics>
+                <position x="390.0" y="480.0"/>
+            </graphics>
+            <name>
+                <value>Schalte auf Grün</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Schalte auf Rot">
+            <graphics>
+                <position x="390.0" y="150.0"/>
+            </graphics>
+            <name>
+                <value>Schalte auf Rot</value>
+                <graphics>
+                    <offset x="59.0" y="-11.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="P0 to T0" source="Grün" target="Schalte auf Gelb">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="566" y="492" curvePoint="false"/>
+            <arcpath id="001" x="681" y="492" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P1 to T1" source="Gelb" target="Schalte auf Rot">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="672" y="232" curvePoint="false"/>
+            <arcpath id="001" x="407" y="157" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P1 to T2" source="Gelb" target="Schalte auf Grün">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="675" y="247" curvePoint="false"/>
+            <arcpath id="001" x="407" y="487" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P2 to T2" source="Rot" target="Schalte auf Grün">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="402" y="251" curvePoint="false"/>
+            <arcpath id="001" x="402" y="477" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P3 to T3" source="loop" target="Schalte auf GelbRot">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="491" y="237" curvePoint="false"/>
+            <arcpath id="001" x="546" y="237" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="P4 to T1" source="Schalte Rot frei" target="Schalte auf Rot">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="280" y="229" curvePoint="false"/>
+            <arcpath id="001" x="396" y="162" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T0 to P1" source="Schalte auf Gelb" target="Gelb">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="687" y="477" curvePoint="false"/>
+            <arcpath id="001" x="687" y="251" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T1 to P2" source="Schalte auf Rot" target="Rot">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="402" y="177" curvePoint="false"/>
+            <arcpath id="001" x="402" y="222" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T1 to P3" source="Schalte auf Rot" target="loop">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="406" y="167" curvePoint="false"/>
+            <arcpath id="001" x="466" y="226" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T2 to P0" source="Schalte auf Grün" target="Grün">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="406" y="497" curvePoint="false"/>
+            <arcpath id="001" x="537" y="492" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T2 to P4" source="Schalte auf Grün" target="Schalte Rot frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="402" y="477" curvePoint="false"/>
+            <arcpath id="001" x="274" y="250" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T3 to P1" source="Schalte auf GelbRot" target="Gelb">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="556" y="237" curvePoint="false"/>
+            <arcpath id="001" x="672" y="237" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>

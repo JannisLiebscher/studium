@@ -1,0 +1,17 @@
+Mathe 1.7
+Betriebssysteme 2,3
+Somo 2-3
+Programmiertechnik 3,0
+Deutsch 3,1
+Englisch 2,7
+Wirtschaft 5.0
+Sport 6.0
+Erdkunde 1
+Religion 1,75
+Ethik gut
+Schwimmen x,y
+Test 4.0
+abcdefg x,0
+qwertz x.3
+Physik 1,y
+NWT 2.y

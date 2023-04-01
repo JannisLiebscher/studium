@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="C1">
+            <graphics>
+                <position x="315.0" y="435.0"/>
+            </graphics>
+            <name>
+                <value>C1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="C1exit">
+            <graphics>
+                <position x="510.0" y="495.0"/>
+            </graphics>
+            <name>
+                <value>C1exit</value>
+                <graphics>
+                    <offset x="2.0" y="7.666666666666667"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="C2">
+            <graphics>
+                <position x="315.0" y="180.0"/>
+            </graphics>
+            <name>
+                <value>C2</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="C2exit">
+            <graphics>
+                <position x="495.0" y="122.5"/>
+            </graphics>
+            <name>
+                <value>C2exit</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="C3">
+            <graphics>
+                <position x="690.0" y="282.5"/>
+            </graphics>
+            <name>
+                <value>C3</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="C3exit">
+            <graphics>
+                <position x="690.0" y="315.0"/>
+            </graphics>
+            <name>
+                <value>C3exit</value>
+                <graphics>
+                    <offset x="-1.6666666666666665" y="25.000000000000007"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Drucker">
+            <graphics>
+                <position x="720.0" y="195.0"/>
+            </graphics>
+            <name>
+                <value>Drucker</value>
+                <graphics>
+                    <offset x="51.0" y="-16.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="ReservierungD">
+            <graphics>
+                <position x="555.0" y="225.0"/>
+            </graphics>
+            <name>
+                <value>ReservierungD</value>
+                <graphics>
+                    <offset x="3.3333333333333335" y="34.16666666666666"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="ReservierungS">
+            <graphics>
+                <position x="555.0" y="390.0"/>
+            </graphics>
+            <name>
+                <value>ReservierungS</value>
+                <graphics>
+                    <offset x="5.333333333333332" y="0.6666666666666666"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Scanner">
+            <graphics>
+                <position x="720.0" y="435.0"/>
+            </graphics>
+            <name>
+                <value>Scanner</value>
+                <graphics>
+                    <offset x="53.0" y="42.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="Benutze Drucker">
+            <graphics>
+                <position x="450.0" y="180.0"/>
+            </graphics>
+            <name>
+                <value>Benutze Drucker</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Benutze D und S">
+            <graphics>
+                <position x="855.0" y="300.0"/>
+            </graphics>
+            <name>
+                <value>Benutze D und S</value>
+                <graphics>
+                    <offset x="113.33333333333336" y="15.833333333333332"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Benutze Scanner">
+            <graphics>
+                <position x="465.0" y="435.0"/>
+            </graphics>
+            <name>
+                <value>Benutze Scanner</value>
+                <graphics>
+                    <offset x="10.833333333333332" y="-4.166666666666667"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Gib Druker frei">
+            <graphics>
+                <position x="555.0" y="45.0"/>
+            </graphics>
+            <name>
+                <value>Gib Druker frei</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Gib D und S frei">
+            <graphics>
+                <position x="505.0" y="300.0"/>
+            </graphics>
+            <name>
+                <value>Gib D und S frei</value>
+                <graphics>
+                    <offset x="4.1666666666666785" y="17.499999999999993"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Gib Scanner frei">
+            <graphics>
+                <position x="557.5" y="555.0"/>
+            </graphics>
+            <name>
+                <value>Gib Scanner frei</value>
+                <graphics>
+                    <offset x="109.99999999999999" y="31.66666666666665"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="C1exit to T4" source="C1exit" target="Gib Scanner frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="530" y="519" curvePoint="false"/>
+            <arcpath id="001" x="565" y="562" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="C1 to T2" source="C1" target="Benutze Scanner">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="341" y="447" curvePoint="false"/>
+            <arcpath id="001" x="471" y="447" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="C2exit to T3" source="C2exit" target="Gib Druker frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="515" y="122" curvePoint="false"/>
+            <arcpath id="001" x="561" y="62" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="C2 to T1" source="C2" target="Benutze Drucker">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="341" y="192" curvePoint="false"/>
+            <arcpath id="001" x="456" y="192" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="C3exit to T6" source="C3exit" target="Gib D und S frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="687" y="326" curvePoint="false"/>
+            <arcpath id="001" x="521" y="317" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="C3 to T5" source="C3" target="Benutze D und S">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="716" y="295" curvePoint="false"/>
+            <arcpath id="001" x="862" y="311" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Drucker to T3" source="Drucker" target="Gib Druker frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="720" y="196" curvePoint="false"/>
+            <arcpath id="001" x="571" y="57" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Drucker to T6" source="Drucker" target="Gib D und S frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="718" y="213" curvePoint="false"/>
+            <arcpath id="001" x="522" y="307" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="ReservierungD to T1" source="ReservierungD" target="Benutze Drucker">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="553" y="231" curvePoint="false"/>
+            <arcpath id="001" x="466" y="198" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="ReservierungD to T5" source="ReservierungD" target="Benutze D und S">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="581" y="240" curvePoint="false"/>
+            <arcpath id="001" x="862" y="307" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="ReservierungS to T2" source="ReservierungS" target="Benutze Scanner">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="553" y="408" curvePoint="false"/>
+            <arcpath id="001" x="482" y="439" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="ReservierungS to T5" source="ReservierungS" target="Benutze D und S">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="581" y="398" curvePoint="false"/>
+            <arcpath id="001" x="861" y="320" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Scanner to T4" source="Scanner" target="Gib Scanner frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="720" y="455" curvePoint="false"/>
+            <arcpath id="001" x="574" y="567" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Scanner to T6" source="Scanner" target="Gib D und S frei">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="719" y="439" curvePoint="false"/>
+            <arcpath id="001" x="521" y="322" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T1 to C2exit" source="Benutze Drucker" target="C2exit">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="467" y="184" curvePoint="false"/>
+            <arcpath id="001" x="497" y="146" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T1 to Drucker" source="Benutze Drucker" target="Drucker">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="467" y="191" curvePoint="false"/>
+            <arcpath id="001" x="717" y="205" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T2 to C1exit" source="Benutze Scanner" target="C1exit">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="481" y="453" curvePoint="false"/>
+            <arcpath id="001" x="513" y="495" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T2 to Scanner" source="Benutze Scanner" target="Scanner">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="482" y="446" curvePoint="false"/>
+            <arcpath id="001" x="717" y="446" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T3 to C2" source="Gib Druker frei" target="C2">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="562" y="52" curvePoint="false"/>
+            <arcpath id="001" x="340" y="184" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T3 to ReservierungD" source="Gib Druker frei" target="ReservierungD">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="567" y="72" curvePoint="false"/>
+            <arcpath id="001" x="567" y="222" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T4 to C1" source="Gib Scanner frei" target="C1">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="564" y="572" curvePoint="false"/>
+            <arcpath id="001" x="340" y="454" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T4 to ReservierungS" source="Gib Scanner frei" target="ReservierungS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="570" y="552" curvePoint="false"/>
+            <arcpath id="001" x="567" y="416" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T5 to C3exit" source="Benutze D und S" target="C3exit">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="861" y="315" curvePoint="false"/>
+            <arcpath id="001" x="716" y="325" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T5 to Drucker" source="Benutze D und S" target="Drucker">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="862" y="304" curvePoint="false"/>
+            <arcpath id="001" x="744" y="215" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T5 to Scanner" source="Benutze D und S" target="Scanner">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="861" y="324" curvePoint="false"/>
+            <arcpath id="001" x="743" y="436" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T6 to C3" source="Gib D und S frei" target="C3">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="521" y="312" curvePoint="false"/>
+            <arcpath id="001" x="687" y="295" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T6 to ReservierungD" source="Gib D und S frei" target="ReservierungD">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="522" y="302" curvePoint="false"/>
+            <arcpath id="001" x="558" y="249" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T6 to ReservierungS" source="Gib D und S frei" target="ReservierungS">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="517" y="327" curvePoint="false"/>
+            <arcpath id="001" x="559" y="390" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
