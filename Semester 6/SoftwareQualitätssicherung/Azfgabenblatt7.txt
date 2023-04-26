@@ -1,0 +1,16 @@
+Lauf Nr:
+G 1 		-> 1
+G 2			-> 2
+G 3,4		-> 3
+G 5,6		-> 5
+U < 1, > 6	-> 7
+
+Mai: 31 Juni: 30 
+tageBisWettkamp:
+G > 32		-> 33
+G 32 - 7	-> 32 / 7
+G 6 - 4		-> 6 / 4
+U < 4		-> 3
+
+Gültig?	laufNr	tageBisWettkampf	Ergebnis
+			
