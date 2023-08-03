@@ -1,0 +1,4 @@
+netsh int ip show excludedportrange protocol=tcp
+net stop winnat
+netsh int ip delete excludedportrange protocol=tcp numberofports=10 startport=3000
+netsh int ip add excludedportrange protocol=tcp numberofports=10 startport=3000

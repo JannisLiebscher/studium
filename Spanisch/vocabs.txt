@@ -1,0 +1,169 @@
+ñ = 0241 Ñ = 0209
+
+araña		Spinne
+cerdo		Schwein
+caballo		Pferd
+mono		Affe
+gato/gata	Katze
+perro		Hund
+pájaro		Vogel
+pescado		Fisch
+pato		Ente
+oso		Bär
+toro 		Stier
+elefante	Elefant
+pingüino	Pinguin
+cangrejo 	Krebs
+conejo		Kanninchen
+
+naranja		Orange
+cebolla		Zwiebel
+jugo		Saft
+manzana		Apfel
+fresa		Erdbeere
+comida		Essen
+azúcar		Zucker
+arroz		Reis
+verduras	Gemüse
+papa		Kartoffel
+leche		Milch
+agua		Wasser
+tomate		Tomate
+limón		Zitrone
+pan		Brot
+huevo		Ei
+pollo		Hänchen
+pasta		Nudeln
+frueta		Obst
+queso		Käse
+galleta		Keks
+emparedado	Sandwich
+sopa		Suppe
+carne		Fleisch
+salsa		Soße
+cerveza		Bier
+té		Tee
+sal		Salz
+
+suéter		Pullover
+ropa		Kleidung
+abrigo		Mantel
+cunturón	Gürtel
+botas		Stiefel
+zapato		Schuh
+pantalón	Hose
+sombrero	Hut
+vestido		Kleid
+falda		Rock
+corbata		Krawatte
+gafas		Brille
+calcetine	Socke
+traje		Anzug
+camisa 		Hemd
+
+desayuno	Frühstück
+almuerzo	Mittagessen
+cena		Abendessen
+
+
+Cómo es España 		Wie ist Spanien
+Quiénes son ellos	Wer sind sie?
+Qué lees		Was liest du?
+Cuál son sus zapatos?	Welche/-r/-s sind seine Schuhe?
+
+Dónde		Wo
+Cuándo		Wann
+Cuánto		Wie viel
+
+
+correr
+corro - corres - corre - corremos - corréis - corren		renne
+nadar
+nado - nadas - nada - nadamos - nadáis - nadan			schwimme
+pagar
+pago - pagas - paga - pagamos -pagáis - pagan			bezahle
+cocer
+cocino - cocinas - cocina - cocinamos - cocináis - cocinan	kochen
+caminar
+camino - caminas - camina - caminamos - camináis - caminan 	laufen
+
+Unregelmäßige
+
+hacer
+hago - haces - hace - hacemos - hacéis - hacen			machen/tun
+ir
+voy - vas - va - vamos - vais - van				gehe
+oír
+oigo - oyes - oye - oímos - oigáis oigan			hören
+poder
+puedo - puedes - puede - podemos - podéis - pueden		kann
+tener
+tengo - tienes - tiene - tenemos - tenéis - tienen		haben
+ver
+veo - ves - ve - vemos- veis - ven				sehe
+dormir
+duermo - duermes - duerme - dormimos - dormis - duermen		schlafe
+
+enero,  febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+lunes, martes, miércoles, jueves, viernes, sábado, domingo
+ayer, hoy, mañana
+segundo, minuto, hora, dia, semana, mes, año
+
+por qué 	warum
+aunque		obwohl
+mientras(que)	während (wohingegen)
+pero		aber
+
+Según Juan...	Laut Juan...
+Bajo 		Unter
+cerca 		in der Nähe
+el libro es acerca... 	Im Buch geht es um.../Ist über
+de 		aus
+en		in/im
+al 		zum
+a		zu
+con 		mit
+para 		für
+hacia		nach
+durante		während
+
+tarde		spät
+una vez		einmal
+deste		von
+hasta		bis
+rato		(eine) weile/ in kürze
+
+temporada	Jahreszeit/Zeitraum/Saison
+estación	Jahreszeit/Bahnhof/Station
+primavera	Frühling
+verano		Sommer
+otoño		Herbs
+invierno	Winter
+
+anoche 		gestern Abend
+por la mañana	in der Früh
+madrugada	Morgendämmerung
+mediodia	Mittag[s|zeit]?
+cita		Termin/Vereinbarung
+fecha		Datum/Zeitpunkt
+fiesta		Party/Feiertag
+vacaciones	Ferien/Urlaub
+compleaño	Geburtstag
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

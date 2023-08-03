@@ -1,0 +1,155 @@
+{
+  "id": "2c407482-1600-4768-8aa7-158dee4869f6",
+  "version": "2.0",
+  "name": "A4.1",
+  "url": "https://www.youtube.com/",
+  "tests": [{
+    "id": "de4f76e9-227e-46fb-a28b-13391a50f9d6",
+    "name": "llsf",
+    "commands": [{
+      "id": "68d08708-7db2-4a8c-bdda-ab5947f6e354",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.youtube.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f54d274e-83b5-4214-80db-0c0365e4af7f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1680x758",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f24029ac-ac14-4f10-add8-7ec8b63dbe84",
+      "comment": "",
+      "command": "click",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#search-input > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44ec7a1f-1b11-454f-b078-c04513b0f995",
+      "comment": "",
+      "command": "type",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#search-input > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Rick Astley - Never Gonna Give You Up"
+    }, {
+      "id": "d43414dc-77ea-45cf-926c-1c82acb2c929",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=search_query",
+      "targets": [
+        ["name=search_query", "name"],
+        ["css=#search-input > #search", "css:finder"],
+        ["xpath=//input[@id='search']", "xpath:attributes"],
+        ["xpath=//div[@id='search-input']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "d3394dcb-75a0-4960-8606-5e49935b2465",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.ytd-item-section-renderer:nth-child(1) > #dismissible #video-title > .style-scope:nth-child(2)",
+      "targets": [
+        ["css=.ytd-item-section-renderer:nth-child(1) > #dismissible #video-title > .style-scope:nth-child(2)", "css:finder"],
+        ["xpath=//a[@id='video-title']/yt-formatted-string", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/h3/a/yt-formatted-string", "xpath:position"],
+        ["xpath=//yt-formatted-string[contains(.,'Rick Astley - Never Gonna Give You Up (Official Music Video)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5477fbc6-64ba-44ea-a7b9-d80bc2bb8306",
+      "comment": "",
+      "command": "click",
+      "target": "css=.ytd-item-section-renderer:nth-child(1) > #dismissible #video-title > .style-scope:nth-child(2)",
+      "targets": [
+        ["css=.ytd-item-section-renderer:nth-child(1) > #dismissible #video-title > .style-scope:nth-child(2)", "css:finder"],
+        ["xpath=//a[@id='video-title']/yt-formatted-string", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/h3/a/yt-formatted-string", "xpath:position"],
+        ["xpath=//yt-formatted-string[contains(.,'Rick Astley - Never Gonna Give You Up (Official Music Video)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a5746c04-2326-49c7-898b-d3f1a73ad64d",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.ytd-item-section-renderer:nth-child(1) > #dismissible #video-title > .style-scope:nth-child(2)",
+      "targets": [
+        ["css=.ytd-item-section-renderer:nth-child(1) > #dismissible #video-title > .style-scope:nth-child(2)", "css:finder"],
+        ["xpath=//a[@id='video-title']/yt-formatted-string", "xpath:idRelative"],
+        ["xpath=//div/div/div/div/h3/a/yt-formatted-string", "xpath:position"],
+        ["xpath=//yt-formatted-string[contains(.,'Rick Astley - Never Gonna Give You Up (Official Music Video)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "133cdc84-8dda-443d-8a0c-6259390d69bb",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,321.1111145019531)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7b23473-a02e-4aa2-a5c6-718ecffb01c8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.style-scope:nth-child(4) > .ytd-watch-metadata",
+      "targets": [
+        ["css=.style-scope:nth-child(4) > .ytd-watch-metadata", "css:finder"],
+        ["xpath=//div[@id='title']/h1/yt-formatted-string", "xpath:idRelative"],
+        ["xpath=//h1/yt-formatted-string", "xpath:position"],
+        ["xpath=//yt-formatted-string[contains(.,'Rick Astley - Never Gonna Give You Up (Official Music Video)')]", "xpath:innerText"]
+      ],
+      "value": "Rick Astley - Never Gonna Give You Up (Official Music Video)"
+    }, {
+      "id": "af625117-7a2b-4b1d-b8f2-9ad7b246db68",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.style-scope:nth-child(1) > #comment > #body > #main > #comment-content > #expander #content-text > .style-scope:nth-child(1)",
+      "targets": [
+        ["css=.style-scope:nth-child(1) > #comment > #body > #main > #comment-content > #expander #content-text > .style-scope:nth-child(1)", "css:finder"],
+        ["xpath=//yt-formatted-string[@id='content-text']/span", "xpath:idRelative"],
+        ["xpath=//ytd-expander/div/yt-formatted-string/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1 BILLION views for Never Gonna Give You Up!  Amazing, crazy, wonderful! Rick ')]", "xpath:innerText"]
+      ],
+      "value": "1 BILLION views for Never Gonna Give You Up!  Amazing, crazy, wonderful! Rick"
+    }, {
+      "id": "c1a47d5e-019c-4b14-a496-f0eb36005277",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Rick Astley",
+      "targets": [
+        ["linkText=Rick Astley", "linkText"],
+        ["css=.ytd-watch-metadata > #upload-info > #channel-name > #container > #text-container .yt-simple-endpoint", "css:finder"],
+        ["xpath=(//a[contains(text(),'Rick Astley')])[3]", "xpath:link"],
+        ["xpath=(//yt-formatted-string[@id='text']/a)[21]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/channel/UCuAXFkgsw1L7xaCfnd5JJOw')])[2]", "xpath:href"],
+        ["xpath=//ytd-video-owner-renderer/div/ytd-channel-name/div/div/yt-formatted-string/a", "xpath:position"]
+      ],
+      "value": "Rick Astley"
+    }]
+  }],
+  "suites": [{
+    "id": "f260e305-18be-472e-9dae-87004dd02978",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["de4f76e9-227e-46fb-a28b-13391a50f9d6"]
+  }],
+  "urls": ["https://lsf.htwg-konstanz.de/qisserver/rds?state=verpublish&status=init&vmfile=no&publishid=188933&moduleCall=webInfo&publishConfFile=webInfo&publishSubDir=veranstaltung", "https://lsf.htwg-konstanz.de/qisserver/rds?state=verpublish&publishContainer=stgPlanList&navigationPosition=lectures%2CcurriculaschedulesList&breadcrumb=curriculaschedules&topitem=lectures&subitem=curriculaschedulesList", "https://www.youtube.com/"],
+  "plugins": []
+}
