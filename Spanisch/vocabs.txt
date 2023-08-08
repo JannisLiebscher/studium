@@ -86,6 +86,8 @@ cocer
 cocino - cocinas - cocina - cocinamos - cocináis - cocinan	kochen
 caminar
 camino - caminas - camina - caminamos - camináis - caminan 	laufen
+limpiar
+limpio - limpias - limpia - limpiamos - limpiáis - limpian	putzen
 
 Unregelmäßige
 
@@ -115,10 +117,11 @@ mientras(que)	während (wohingegen)
 pero		aber
 
 Según Juan...	Laut Juan...
-Bajo 		Unter
+bajo 		unter
+sobre		über
 cerca 		in der Nähe
 el libro es acerca... 	Im Buch geht es um.../Ist über
-de 		aus
+de 		von/aus/mit/als
 en		in/im
 al 		zum
 a		zu
@@ -129,6 +132,7 @@ durante		während
 
 tarde		spät
 una vez		einmal
+a veces 	manchmal
 deste		von
 hasta		bis
 rato		(eine) weile/ in kürze
@@ -152,9 +156,58 @@ compleaño	Geburtstag
 
 
 
+cuchillo	Messer
+mesa		Tisch
+silla		Stuhl
+cama		Bett
+dormitorio	Schlafzimmer
+vaso		Glas
+cuchara		Löffel
+plato		Teller
+camino		Weg
+cocina 		Küche
+piscina 	Schwimmbecken
+televisión	Fernsehen
+cuna		Baby/Gitterbett
+taza		Tassa
+ventana		Fenster
+teléfono	Telefon
+puerta		Tür
+escritorio	Schreibtisch
+esponja		Schwamm
+espejo		Spiegel
+sartén 		Pfanne
+sofá		Sofa
+lámpara		Lampe
+horno		Ofen
+pared		Wand
+piso		(Fuß)Boden
+techo		Dach
+sótano		Keller
+escalera	Treppe/Leiter
+mapa		Karte
+baño		Toilette/Bad
+cepillo		(Haar)Bürste
+secadora	Trockner
+lavadora	Waschmaschine
+habitación	Raum/Zimmer
+refrigerador	Kühlschrank
+paraguas	Regenschirm
+cartera		Brieftasche
+sábana		Bettlaken
+jabón		Seife
+rasuradora	Rasierer
 
 
-
+corto		kurz
+largo		lang
+alto		hoch
+grande		groß/hoch
+gran		groß/bedeutend
+bajo		klein/geringe höhe
+pequeño		klein
+enorme		riesig/enorm
+tamaño		Größe				tiene el tamaño de un huevo - Es ist so groß wie ein Ei(Es hat eine größe wie ein Ei)
 
 
 
