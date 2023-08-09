@@ -210,6 +210,74 @@ enorme		riesig/enorm
 tamaño		Größe				tiene el tamaño de un huevo - Es ist so groß wie ein Ei(Es hat eine größe wie ein Ei)
 
 
+rey/reina	König/Königin
+principe	Prinz
+sacerdote	Priester
+
+doctor/a	Arzt/Ärztin
+polocía		Polizist
+secretario/a	Sekretär/in
+juez		Richter
+periodista	Journalist
+abogado		Rechtsanwalt
+pintor		Maler
+granjeo		Farmer/Bauer
+panadero	Bäcker
+ingeniero	Ingenieur
+carpintero	Tischler
+cocinero	Koch
+mesero		Kellner
+conductor	Fahrer
+cajero		Kassierer
+enfermera	Krankenschwester
+
+maestro		Lehrer
+profesora	Professorin
+estudiante	Schüler
+
+soldado		Soldat
+comandante	Kommandant
+guardia		Wächter
+capitán		Kapitän
+coronel		Oberst
+
+jefe		Chef/Leiter
+empresario	Unternehmer
+dueño/duaña	Inhaber/in
+empleado	Mitarbeiter/Angestellter
+
+autor		Autor/Verfasser
+poeta		Poet
+artistas	Künstler
+actor		Schauspieler
+agente		Agent
+atleta		Athlet
+
+especialidad	Spezialität
+especialisto	Fachmann 		especialisto en pájaros		Vogelspezialist	
+trabajo		Arbeit/Beruf
+profesíon	Beruf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
