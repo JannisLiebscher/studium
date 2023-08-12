@@ -232,7 +232,7 @@ cajero		Kassierer
 enfermera	Krankenschwester
 
 maestro		Lehrer
-profesora	Professorin
+profesor(a)	Professor(in)
 estudiante	Schüler
 
 soldado		Soldat
@@ -257,6 +257,41 @@ especialidad	Spezialität
 especialisto	Fachmann 		especialisto en pájaros		Vogelspezialist	
 trabajo		Arbeit/Beruf
 profesíon	Beruf
+
+duro		hart
+buen		gut
+necesario	notwendig
+útiles		nützlich
+último		letzte
+imposible	unmöglich
+simple		einfach
+peor		schlimmer/schlechter
+suficiente	genug/ausreichend
+propia		eigene/s/r
+siguiente	nächste/danach
+profesional	professionell
+claro		klar
+pobre		arm/bedürftig
+normal		normal/gewöhnlich
+familiar	bekannt/vertraut
+mala		schlecht/unzureichend
+tantas		so viele
+responsable	vernatwortlich/zuständig
+justo		gerecht/knapp/genau
+rica		reich
+histórico	historisch
+reciente	neu
+plano		flach
+natural		natürlich
+próximo		nächster
+juntos		gemeinsam
+tradicional	traditionell
+rápido		schnell
+caro		teuer
+barato		billig
+pasado		vergangen
+inteligente	intelligent
+mejor		besser/lieber
 
 
 
