@@ -94,15 +94,15 @@ Unregelmäßige
 hacer
 hago - haces - hace - hacemos - hacéis - hacen			machen/tun
 ir
-voy - vas - va - vamos - vais - van				gehe
+voy - vas - va - vamos - vais - van						gehe
 oír
-oigo - oyes - oye - oímos - oigáis oigan			hören
+oigo - oyes - oye - oímos - oigáis oigan				hören
 poder
 puedo - puedes - puede - podemos - podéis - pueden		kann
 tener
 tengo - tienes - tiene - tenemos - tenéis - tienen		haben
 ver
-veo - ves - ve - vemos- veis - ven				sehe
+veo - ves - ve - vemos- veis - ven						sehe
 dormir
 duermo - duermes - duerme - dormimos - dormis - duermen		schlafe
 
@@ -293,10 +293,7 @@ pasado		vergangen
 inteligente	intelligent
 mejor		besser/lieber
 
-
-
-
-
+//TODO Prüfen und gegebenenfalls löschen
 
 juega		spielen
 llevo		(klamotten) tragen
@@ -345,142 +342,103 @@ importan	importieren
 
 jugar
 juego - juegas - juega - jugamos - jugáis - juegan spielen
-
 llevar
 llevo - llevas - lleva - llevamos - lleváis - llevan (klamotten) tragen
-
 encontrar
 encuentro - encuentras - encuentra - encontramos - encontráis - encuentran finden/begegnen
-
 estudiar
 estudio - estudias - estudia - estudiamos - estudiáis - estudian lernen
-
 saber
 sé - sabes - sabe - sabemos - sabéis - saben wissen
-
 seguir
 sigo - sigues - sigue - seguimos - seguís - siguen folgen
-
 quedar
 quedo - quedas - queda - quedamos - quedáis - quedan (sich) treffen/bleiben
-
-venir
-vengo - vienes - viene - venimos - venís - vienen kommen
-
-ayudar
-ayudo - ayudas - ayuda - ayudamos - ayudáis - ayudan helfen
-
 probar
 pruebo - pruebas - prueba - probamos - probáis - prueban probieren
-
 bajar
 bajo - bajas - baja - bajamos - bajáis - bajan (aus)steigen
-
 mirar
 miro - miras - mira - miramos - miráis - miran anschauen
-
 pesar
 peso - pesas - pesa - pesamos - pesáis - pesan wiegen (baby/gewicht)
-
 mostrar
 muestro - muestras - muestra - mostramos - mostráis - muestran zeigen
-
 soñar
 sueño - sueñas - sueña - soñamos - soñáis - sueñan träumen
-
-estar
-estoy - estás - está - estamos - estáis - están sein
-
 buscar
 busco - buscas - busca - buscamos - buscáis - buscan suchen
-
 cerrar
 cierro - cierras - cierra - cerramos - cerráis - cierran zu machen/schließen
-
-aparecer
-aparezco - apareces - aparece - aparecemos - aparecéis - aparecen auftauchen/erscheinen
-
 presentar
 presento - presentas - presenta - presentamos - presentáis - presentan präsentieren/vorstellen
-
 recordar
 recuerdo - recuerdas - recuerda - recordamos - recordáis - recuerdan erinnern
-
 aceptar
 acepto - aceptas - acepta - aceptamos - aceptáis - aceptan zustimmen
-
 volver
 vuelvo - vuelves - vuelve - volvemos - volvéis - vuelven zurückkehren
-
 dar
 doy - das - da - damos - dais - dan geben
-
 tomar
 tomo - tomas - toma - tomamos - tomáis - toman nehmen/trinken
-
 pensar
 pienso - piensas - piensa - pensamos - pensáis - piensan denken/überlegen
-
 visitar
 visito - visitas - visita - visitamos - visitáis - visitan besuchen/Besuch
-
 respetar
 respeto - respetas - respeta - respetamos - respetáis - respetan achten/respektieren
-
 caber
 quepo - cabes - cabe - cabemos - cabéis - caben passen
-
 parecer
 parezco - pareces - parece - parecemos - parecéis - parecen aussehen/scheint
-
 servir
 sirvo - sirves - sirve - servimos - servís - sirven servieren/dienen
-
 contar con
 cuento con - cuentas con - cuenta con - contamos con - contáis con - cuentan con ich verlasse mich auf
-
 acabar
 acabo - acabas - acaba - acabamos - acabáis - acaban enden
-
 comenzar
 comienzo - comienzas - comienza - comenzamos - comenzáis - comienzan beginnen
-
-conocer
-conozco - conoces - conoce - conocemos - conocéis - conocen kennen
-
 contar
 cuento - cuentas - cuenta - contamos - contáis - cuentan zählen
-
 firmar
 firmo - firmas - firma - firmamos - firmáis - firman signieren/unterschreiben
-
 sentir
 siento - sientes - siente - sentimos - sentís - sienten fühlen
-
 entrar
 entro - entras - entra - entramos - entráis - entran rein kommen/gehen
-
 entregar
 entrego - entregas - entrega - entregamos - entregáis - entregan (ab)liefern/Lieferung
-
-incluir
-incluyo - incluyes - incluye - incluimos - incluís - incluyen mit einbeziehen/einschließen
-
 culpar
 culpo - culpas - culpa - culpamos - culpáis - culpan beschuldigen
-
+importar
+importo - importas - importa - importamos - importáis - importan importieren
+venir
+vengo - vienes - viene - venimos - venís - vienen kommen
+ayudar
+ayudo - ayudas - ayuda - ayudamos - ayudáis - ayudan helfen
+estar
+estoy - estás - está - estamos - estáis - están sein
+aparecer
+aparezco - apareces - aparece - aparecemos - aparecéis - aparecen auftauchen/erscheinen
+volver
+vuelvo - vuelves - vuelve - volvemos - volvéis - vuelven zurückkehren
+conocer
+conozco - conoces - conoce - conocemos - conocéis - conocen kennen
+incluir
+incluyo - incluyes - incluye - incluimos - incluís - incluyen mit einbeziehen/einschließen
+culpar
+culpo - culpas - culpa - culpamos - culpáis - culpan beschuldigen
 importar
 importo - importas - importa - importamos - importáis - importan importieren
 
-
-
-
-
-
-
-
-
-
+depende			es kommt darauf an/ist abhängig
+llegamos		ankommen/eintreffen
+abro			öffnen
+requiere		benötigt/erfordert
+dicen			sagen			ellos dicen que no
+empieza			beginnen/anfangen/starten
 
 
 
