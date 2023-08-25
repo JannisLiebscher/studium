@@ -131,7 +131,7 @@ hacia		nach
 durante		während
 
 tarde		spät
-una vez		einmal
+una vez		einmal (vez = mal)
 a veces 	manchmal
 deste		von
 hasta		bis
@@ -453,8 +453,16 @@ empiezo - empiezas - empieza - empezamos - empezáis - empiezan beginnen/anfange
 
 
 
-
-
+poco		wenige
+unos		einige
+alguna		irgendwelche
+todo		alle
+esto/este/esta 	das (n/m/w) this
+eso/ese/esa		das (n/m/w)	that
+aquel/aquella	das (n,m/w)	that over there
+otro		anderes/weiteres
+ningún		kein
+cualquier	jeder(zeit)
 
 
 

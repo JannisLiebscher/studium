@@ -318,7 +318,7 @@ presenta	präsentieren/vorstellen
 recordamos	erinnern
 acepta		zustimmen
 vuelve		zurückkehren
-da		geben
+da			geben
 tomo		nehmen/trinken
 pienso		denken/überlegen
 visita		besuchen/Besuch
@@ -338,6 +338,12 @@ entrega		(ab)liefern/Lieferung
 incluye		mit ein beziehen/einschließen
 culpa		beschuldigen
 importan	importieren
+depende		es kommt darauf an/ist abhängig
+llegamos	ankommen/eintreffen
+abro		öffnen
+requiere	benötigt/erfordert
+dicen		sagen
+empieza		beginnen/anfangen/starten
 
 
 jugar
@@ -432,17 +438,18 @@ culpar
 culpo - culpas - culpa - culpamos - culpáis - culpan beschuldigen
 importar
 importo - importas - importa - importamos - importáis - importan importieren
-
-depende			es kommt darauf an/ist abhängig
-llegamos		ankommen/eintreffen
-abro			öffnen
-requiere		benötigt/erfordert
-dicen			sagen			ellos dicen que no
-empieza			beginnen/anfangen/starten
-
-
-
-
+depende
+dependo - dependes - depende - dependemos - dependéis - dependen es kommt darauf an/ist abhängig
+llegamos
+llego - llegas - llega - llegamos - llegáis - llegan ankommen/eintreffen
+abro
+abro - abres - abre - abrimos - abrís - abren öffnen
+requiere
+requiero - requieres - requiere - requerimos - requerís - requieren benötigt/erfordert
+dicen
+digo - dices - dice - decimos - decís - dicen sagen (ellos dicen que no)
+empieza
+empiezo - empiezas - empieza - empezamos - empezáis - empiezan beginnen/anfangen/starten
 
 
 
