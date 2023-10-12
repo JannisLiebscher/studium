@@ -33,6 +33,8 @@ INSERT INTO KUNDE (kunde_alter, kunde_name, kunde_land) VALUES
 (40, 'John Smith', 'USA');
 INSERT INTO KUNDE (kunde_alter, kunde_name, kunde_land) VALUES
 (28, 'Sophie Dupont', 'Frankreich');
+INSERT INTO KUNDE (kunde_alter, kunde_name, kunde_land) VALUES
+(40, 'Peter Alt', 'Frankreich');
 
 -- Beispiel-Verkäufer
 INSERT INTO VERKAEUFER (verkaeufer_geburtsdatum, verkaeufer_name, verkaeufer_fachgebiet) VALUES
@@ -79,3 +81,7 @@ INSERT INTO VERKAUF (verkaeufer_ID, kunde_ID, produkt_ID, filiale_ID, verkauf_da
 VALUES (4, 3, 9, 2, TO_DATE('2023-10-12', 'YYYY-MM-DD'), 1);
 INSERT INTO VERKAUF (verkaeufer_ID, kunde_ID, produkt_ID, filiale_ID, verkauf_datum, verkauf_anzahl)
 VALUES (1, 4, 8, 1, TO_DATE('2023-10-12', 'YYYY-MM-DD'), 1);
+INSERT INTO VERKAUF (verkaeufer_ID, kunde_ID, produkt_ID, filiale_ID, verkauf_datum, verkauf_anzahl)
+VALUES (1, 5, 8, 1, TO_DATE('2023-10-12', 'YYYY-MM-DD'), 1);
+INSERT INTO VERKAUF (verkaeufer_ID, kunde_ID, produkt_ID, filiale_ID, verkauf_datum, verkauf_anzahl)
+VALUES (1, 5, 6, 1, TO_DATE('2023-10-12', 'YYYY-MM-DD'), 3);
