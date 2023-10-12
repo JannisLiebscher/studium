@@ -36,13 +36,13 @@ CREATE TABLE PRODUKT (
 );
 CREATE TABLE VERKAUF (
     verkaeufer_ID NUMBER,
-    kunden_ID NUMBER,
+    kunde_ID NUMBER,
     produkt_ID NUMBER,
     filiale_ID NUMBER,
     verkauf_datum DATE,
     verkauf_anzahl NUMBER,
     CONSTRAINT fk_verkauf_verkaeufer FOREIGN KEY (verkaeufer_ID) REFERENCES VERKAEUFER(VERKAEUFER_ID),
-    CONSTRAINT fk_verkauf_kunden FOREIGN KEY (kunden_ID) REFERENCES KUNDE(kunde_ID),
+    CONSTRAINT fk_verkauf_kunde FOREIGN KEY (kunde_ID) REFERENCES KUNDE(kunde_ID),
     CONSTRAINT fk_verkauf_produkt FOREIGN KEY (produkt_ID) REFERENCES PRODUKT(produkt_ID),
     CONSTRAINT fk_verkauf_filiale FOREIGN KEY (filiale_ID) REFERENCES FILIALE(filial_ID)
 );
