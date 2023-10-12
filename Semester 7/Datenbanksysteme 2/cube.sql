@@ -8,4 +8,18 @@ AND v.produkt_ID = p.Produkt_ID
 AND v.kunde_ID = k.Kunde_ID
 GROUP BY CUBE (p.produkt_gruppe, k.kunde_alter);
 
-select * FROM Verkauf_2DC
+select * FROM Verkauf_2DC;
+
+SELECT "ALTER", COALESCE(Bekleidung, 0) AS Bekleidung, COALESCE(Elektronik, 0) AS Elektronik
+FROM (
+    SELECT *
+    FROM Verkauf_2DC
+    PIVOT (
+        SUM(anzahl)
+        FOR gruppe
+        IN (
+            'Bekleidung' AS Bekleidung,
+            'Elektronik' AS Elektronik
+        )
+    )
+)
