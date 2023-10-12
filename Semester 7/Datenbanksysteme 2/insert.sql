@@ -1,20 +1,14 @@
--- Beispielprodukt 1
+-- Beispielprodukte
 INSERT INTO PRODUKT (produkt_bezeichnung, produkt_preis, produkt_gruppe, produkt_hersteller, produkt_land)
 VALUES ('Smartphone', '499.99', 'Elektronik', 'Samsung', 'Deutschland');
-
--- Beispielprodukt 2
 INSERT INTO PRODUKT (produkt_bezeichnung, produkt_preis, produkt_gruppe, produkt_hersteller, produkt_land)
 VALUES ('Laptop', '799.99', 'Elektronik', 'Dell', 'USA');
-
--- Beispielprodukt 3
 INSERT INTO PRODUKT (produkt_bezeichnung, produkt_preis, produkt_gruppe, produkt_hersteller, produkt_land)
 VALUES ('Smartwatch', '249.99', 'Elektronik', 'Apple', 'USA');
 
--- Beispiel-Filiale 1
+-- Beispielfilialen
 INSERT INTO FILIALE (filiale_filialleiter, filiale_stadt, filiale_bezirk, filiale_land)
 VALUES ('Max Mustermann', 'Berlin', 'Mitte', 'Deutschland');
-
--- Beispiel-Filiale 2
 INSERT INTO FILIALE (filiale_filialleiter, filiale_stadt, filiale_bezirk, filiale_land)
 VALUES ('Jane doe', 'München', 'Schwabing', 'Deutschland');
 
