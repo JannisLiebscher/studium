@@ -23,3 +23,14 @@ FROM (
         )
     )
 )
+
+DROP TABLE Verkauf_3DC;
+create Table Verkauf_3DC
+AS
+SELECT COALESCE(p.produkt_gruppe,'alle') as Gruppe, COALESCE(TO_CHAR(CAST(MONTHS_BETWEEN( SysDate,k.verkaeufer_geburtsdatum)/12 as int)), 'alle') as "ALTER", EXTRACT(YEAR FROM v.verkauf_datum) as datum,
+sum(v.verkauf_anzahl * p.produkt_preis ) as umsatz
+FROM Verkaeufer k, Produkt p, Verkauf v
+where v.produkt_ID = p.Produkt_ID
+AND v.verkaeufer_ID = k.verkaeufer_ID
+group by rollup (k.verkaeufer_geburtsdatum,p.produkt_gruppe, EXTRACT(YEAR FROM v.verkauf_datum));
+select * FROM Verkauf_3DC;
