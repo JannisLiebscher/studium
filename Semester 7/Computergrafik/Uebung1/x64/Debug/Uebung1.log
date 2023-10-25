@@ -1,0 +1,6 @@
+﻿  Uebung1.cpp
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung1\Uebung1.cpp(357,19): warning C4566: Das durch den universellen Zeichennamen "\uFFFD" dargestellte Zeichen kann in der aktuellen Codepage (1252) nicht dargestellt werden.
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Code wird generiert...
+  Uebung1.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
+  Uebung1.vcxproj -> C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\x64\Debug\Uebung1.exe

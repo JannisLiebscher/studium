@@ -1,0 +1,2 @@
+C:\Users\Jannis\Downloads\Uebung1\Uebung1\x64\Debug\Uebung1.vcxproj.AssemblyReference.cache
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung1\x64\Debug\Uebung1.vcxproj.AssemblyReference.cache
