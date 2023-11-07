@@ -1,0 +1,72 @@
+CREATE OR REPLACE TYPE PersonT AS OBJECT
+(name VARCHAR2(40)) NOT FINAL;
+
+CREATE OR REPLACE TYPE ProfessorT UNDER PersonT
+(fachgebiet VARCHAR2(40),
+buero CHAR(4)) FINAL;
+
+CREATE OR REPLACE TYPE ProfessorenVA AS VARRAY(50) OF REF ProfessorT;
+
+CREATE OR REPLACE TYPE FakultaetT AS OBJECT
+(name VARCHAR2(20),
+ dekan REF ProfessorT,
+ professoren ProfessorenVA) FINAL;
+
+CREATE OR REPLACE TYPE StudiengangT AS OBJECT
+(name VARCHAR2(40),
+fakultaet REF FakultaetT) FINAL;
+
+CREATE OR REPLACE TYPE StudierenderT UNDER PersonT
+(matrikelnummer VARCHAR(6),
+ studiengang REF StudiengangT,
+ MEMBER FUNCTION getNotenschnitt RETURN FLOAT) FINAL;
+
+CREATE OR REPLACE TYPE VorlesungT AS OBJECT
+(name VARCHAR2(40),
+professor REF ProfessorT) FINAL;
+
+DROP TABLE ProfessorTab;
+DROP TABLE FakultaetTab;
+DROP TABLE StudiengangTab;
+DROP TABLE StudierenderTab;
+DROP TABLE VorlesungTab;
+
+CREATE TABLE ProfessorTab OF ProfessorT;
+CREATE TABLE FakultaetTab OF FakultaetT (dekan SCOPE IS ProfessorTab);
+CREATE TABLE StudiengangTab OF StudiengangT (fakultaet SCOPE IS FakultaetTab);
+CREATE TABLE StudierenderTab OF StudierenderT (studiengang SCOPE IS StudiengangTab);
+CREATE TABLE VorlesungTab OF VorlesungT (professor SCOPE IS ProfessorTab);
+
+/* Test */
+
+CREATE OR REPLACE TYPE PruefungsergebnisT AS OBJECT
+(pruefungsDatum Date,
+ vorlesung REF VorlesungT,
+ student REF StudierenderT,
+ note Float);
+ 
+DROP TABLE PruefungsergebnisTab;
+
+CREATE TABLE PruefungsergebnisTab
+(prf PruefungsergebnisT
+Check(prf.note = 1.0 OR prf.note = 1.3 OR prf.note = 1.7
+ OR prf.note = 2.0 OR prf.note = 2.3 OR prf.note = 2.7 
+ OR prf.note = 3.0 OR prf.note = 3.3 OR prf.note = 3.7
+ OR prf.note = 4.0  OR prf.note = 5.0));
+ 
+INSERT INTO ProfessorTab VALUES (ProfessorT('Langweg', 'Software Sicherheit', 'B101'));
+INSERT INTO ProfessorTab VALUES (ProfessorT('Eck', 'Datenbanken', 'C202'));
+INSERT INTO ProfessorTab VALUES (ProfessorT('Drachenfels', 'Programmiertechnik', 'A303'));
+INSERT INTO ProfessorTab VALUES (ProfessorT('Schoppa', 'Digitaltechnik', 'D404'));
+SELECT * FROM ProfessorTab;
+
+Delete From FakultaetTab where 1=1;
+ INSERT INTO  FakultaetTab VALUES(
+        FakultaetT('Informatik', 
+                (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Langweg'),
+                ProfessorenVA((SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Langweg'),
+                (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Eck'),
+                (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Drachenfels')
+                )
+         )
+ );
