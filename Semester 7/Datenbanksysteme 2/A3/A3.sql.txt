@@ -21,6 +21,15 @@ CREATE OR REPLACE TYPE StudierenderT UNDER PersonT
  studiengang REF StudiengangT,
  MEMBER FUNCTION getNotenschnitt RETURN FLOAT) FINAL;
 
+/*  --- A3 --- */
+CREATE TYPE BODY getNotenschnitt AS
+        MEMBER PROCEDURE FUNCTION IS
+                g FLOAT;
+        BEGIN
+                SELECT tab.prf.note FROM PruefungsergebnisTab tab WHERE pref.student.name = SELF.name
+        END normalize;
+END;
+
 CREATE OR REPLACE TYPE VorlesungT AS OBJECT
 (name VARCHAR2(40),
 professor REF ProfessorT) FINAL;
@@ -37,7 +46,7 @@ CREATE TABLE StudiengangTab OF StudiengangT (fakultaet SCOPE IS FakultaetTab);
 CREATE TABLE StudierenderTab OF StudierenderT (studiengang SCOPE IS StudiengangTab);
 CREATE TABLE VorlesungTab OF VorlesungT (professor SCOPE IS ProfessorTab);
 
-/* Test */
+/*  -------------------------------------- Stuff -------------------------------------- */
 
 CREATE OR REPLACE TYPE PruefungsergebnisT AS OBJECT
 (pruefungsDatum Date,
@@ -54,14 +63,16 @@ Check(prf.note = 1.0 OR prf.note = 1.3 OR prf.note = 1.7
  OR prf.note = 3.0 OR prf.note = 3.3 OR prf.note = 3.7
  OR prf.note = 4.0  OR prf.note = 5.0));
  
+Delete From ProfessorTab where 1=1;
+ 
 INSERT INTO ProfessorTab VALUES (ProfessorT('Langweg', 'Software Sicherheit', 'B101'));
 INSERT INTO ProfessorTab VALUES (ProfessorT('Eck', 'Datenbanken', 'C202'));
 INSERT INTO ProfessorTab VALUES (ProfessorT('Drachenfels', 'Programmiertechnik', 'A303'));
 INSERT INTO ProfessorTab VALUES (ProfessorT('Schoppa', 'Digitaltechnik', 'D404'));
-SELECT * FROM ProfessorTab;
 
 Delete From FakultaetTab where 1=1;
- INSERT INTO  FakultaetTab VALUES(
+
+INSERT INTO  FakultaetTab VALUES(
         FakultaetT('Informatik', 
                 (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Langweg'),
                 ProfessorenVA((SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Langweg'),
@@ -70,3 +81,141 @@ Delete From FakultaetTab where 1=1;
                 )
          )
  );
+INSERT INTO  FakultaetTab VALUES(
+        FakultaetT('BWL', 
+                (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Schoppa'),
+        ProfessorenVA(
+                (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Schoppa')            
+                )
+        )
+);
+
+Delete From VorlesungTab where 1=1;
+ 
+INSERT INTO VorlesungTab VALUES(
+        VorlesungT('Digitaltechnik', (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Schoppa'))
+);
+INSERT INTO VorlesungTab VALUES(
+        VorlesungT('DBSYS', (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Eck'))
+);
+INSERT INTO VorlesungTab VALUES(
+        VorlesungT('Programmiertechnik', (SELECT REF(tab) FROM ProfessorTAB tab WHERE tab.name = 'Drachenfels'))
+);
+
+Delete From StudiengangTab where 1=1;
+
+INSERT INTO StudiengangTab VALUES(
+        StudiengangT('AIN', (SELECT REF(tab) FROM FakultaetTab tab WHERE tab.name = 'Informatik'))
+);        
+INSERT INTO StudiengangTab VALUES(
+        StudiengangT('WIN', (SELECT REF(tab) FROM FakultaetTab tab WHERE tab.name = 'Informatik'))        
+);
+INSERT INTO StudiengangTab VALUES(
+        StudiengangT('BWL-Gang', (SELECT REF(tab) FROM FakultaetTab tab WHERE tab.name = 'BWL'))        
+);
+
+
+
+Delete From StudierenderTab where 1=1;
+
+INSERT INTO StudierenderTab VALUES(
+        StudierenderT('Gustav', '123456', (SELECT REF(tab) FROM StudiengangTab tab WHERE tab.name = 'AIN'))    
+);       
+INSERT INTO StudierenderTab VALUES(
+        StudierenderT('Tick', '424242', (SELECT REF(tab) FROM StudiengangTab tab WHERE tab.name = 'AIN'))    
+);
+INSERT INTO StudierenderTab VALUES(
+        StudierenderT('Trick', '696969', (SELECT REF(tab) FROM StudiengangTab tab WHERE tab.name = 'AIN'))    
+);
+INSERT INTO StudierenderTab VALUES(
+        StudierenderT('Track', '313131', (SELECT REF(tab) FROM StudiengangTab tab WHERE tab.name = 'WIN'))    
+);
+INSERT INTO StudierenderTab VALUES(
+        StudierenderT('Dumbatz', '000000', (SELECT REF(tab) FROM StudiengangTab tab WHERE tab.name = 'BWL-Gang'))    
+);
+
+Delete From PruefungsergebnisTab where 1=1;
+
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('01.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'DBSYS'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Gustav'),
+                1.7             
+        )   
+);
+
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('01.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'DBSYS'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Tick'),
+                1.3             
+        )   
+);
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('01.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'DBSYS'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Trick'),
+                2.3             
+        )   
+);
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('01.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'DBSYS'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Track'),
+                5.0             
+        )   
+);
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('03.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'Programmiertechnik'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Gustav'),
+                1.0             
+        )   
+);
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('31.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'Digitaltechnik'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Gustav'),
+                2.0           
+        )   
+);
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('03.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'Programmiertechnik'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Track'),
+                5.0             
+        )   
+);
+INSERT INTO  PruefungsergebnisTab VALUES(
+        PruefungsergebnisT(
+                TO_DATE('31.03.1986', 'DD.MM.YYYY'),                
+                (SELECT REF(tab) FROM VorlesungTab tab WHERE tab.name = 'Digitaltechnik'),
+                (SELECT REF(tab) FROM StudierenderTab tab WHERE tab.name = 'Track'),
+                3.0            
+        )   
+);
+
+SELECT tab.name FROM FakultaetTab tab;
+SELECT tab.name FROM ProfessorTab tab;
+SELECT tab.name FROM VorlesungTab tab;
+SELECT tab.name, tab.matrikelnummer, tab.studiengang.name FROM StudierenderTab tab;
+SELECT tab.prf.pruefungsDatum, tab.prf.vorlesung.name, tab.prf.student.name, tab.prf.note  FROM PruefungsergebnisTab tab;
+
+/*  -------------------------------------- A2 -------------------------------------- */
+
+/*  2 a */
+SELECT tab.prf.student.name FROM PruefungsergebnisTab tab WHERE tab.prf.note < 2.0 AND tab.prf.vorlesung.name = 'DBSYS';
+
+/*  2 b */
+SELECT name FROM StudierenderTab tab WHERE tab.studiengang.fakultaet.dekan.name = 'Langweg';
+
+/*  2 c */
+SELECT p.name
+FROM TABLE((SELECT tab.professoren FROM FakultaetTab tab WHERE tab.name = 'Informatik')) p;
