@@ -1,3 +1,28 @@
+DROP TABLE ProfessorTab;
+DROP TABLE FakultaetTab;
+DROP TABLE StudiengangTab;
+DROP TABLE StudierenderTab;
+DROP TABLE VorlesungTab;
+DROP TABLE PruefungsergebnisTab;
+
+DROP TYPE PruefungsergebnisT;
+DROP TYPE VorlesungT;
+DROP TYPE StudierenderT;
+DROP TYPE StudiengangT;
+DROP TYPE FakultaetT;
+DROP TYPE ProfessorenVA;
+DROP TYPE ProfessorT;
+DROP TYPE PersonT;
+DROP TYPE BODY StudierenderT;
+
+CREATE OR REPLACE TYPE PruefungsergebnisT AS OBJECT
+(
+    PruefungsDatum DATE,
+    Note          NUMBER,
+    Vorlesung     REF VORLESUNGT,
+    Studierender  REF STUDIERENDERT
+) FINAL;
+
 CREATE OR REPLACE TYPE PersonT AS OBJECT
 (name VARCHAR2(40)) NOT FINAL;
 
@@ -21,24 +46,9 @@ CREATE OR REPLACE TYPE StudierenderT UNDER PersonT
  studiengang REF StudiengangT,
  MEMBER FUNCTION getNotenschnitt RETURN FLOAT) FINAL;
 
-/*  --- A3 --- */
-CREATE TYPE BODY getNotenschnitt AS
-        MEMBER PROCEDURE FUNCTION IS
-                g FLOAT;
-        BEGIN
-                SELECT tab.prf.note FROM PruefungsergebnisTab tab WHERE pref.student.name = SELF.name
-        END normalize;
-END;
-
 CREATE OR REPLACE TYPE VorlesungT AS OBJECT
 (name VARCHAR2(40),
 professor REF ProfessorT) FINAL;
-
-DROP TABLE ProfessorTab;
-DROP TABLE FakultaetTab;
-DROP TABLE StudiengangTab;
-DROP TABLE StudierenderTab;
-DROP TABLE VorlesungTab;
 
 CREATE TABLE ProfessorTab OF ProfessorT;
 CREATE TABLE FakultaetTab OF FakultaetT (dekan SCOPE IS ProfessorTab);
@@ -53,15 +63,14 @@ CREATE OR REPLACE TYPE PruefungsergebnisT AS OBJECT
  vorlesung REF VorlesungT,
  student REF StudierenderT,
  note Float);
- 
-DROP TABLE PruefungsergebnisTab;
 
-CREATE TABLE PruefungsergebnisTab
-(prf PruefungsergebnisT
-Check(prf.note = 1.0 OR prf.note = 1.3 OR prf.note = 1.7
- OR prf.note = 2.0 OR prf.note = 2.3 OR prf.note = 2.7 
- OR prf.note = 3.0 OR prf.note = 3.3 OR prf.note = 3.7
- OR prf.note = 4.0  OR prf.note = 5.0));
+
+CREATE TABLE PruefungsergebnisTab OF PruefungsergebnisT
+(
+Check(note = 1.0 OR note = 1.3 OR note = 1.7
+ OR note = 2.0 OR note = 2.3 OR note = 2.7 
+ OR note = 3.0 OR note = 3.3 OR note = 3.7
+ OR note = 4.0  OR note = 5.0));
  
 Delete From ProfessorTab where 1=1;
  
@@ -203,19 +212,34 @@ INSERT INTO  PruefungsergebnisTab VALUES(
 );
 
 SELECT tab.name FROM FakultaetTab tab;
-SELECT tab.name FROM ProfessorTab tab;
-SELECT tab.name FROM VorlesungTab tab;
+SELECT * FROM ProfessorTab tab;
+SELECT tab.professor.name FROM VorlesungTab tab;
 SELECT tab.name, tab.matrikelnummer, tab.studiengang.name FROM StudierenderTab tab;
-SELECT tab.prf.pruefungsDatum, tab.prf.vorlesung.name, tab.prf.student.name, tab.prf.note  FROM PruefungsergebnisTab tab;
+SELECT tab.pruefungsDatum, tab.vorlesung.name, tab.student.name, tab.note  FROM PruefungsergebnisTab tab;
 
-/*  -------------------------------------- A2 -------------------------------------- */
+-------------------------------------- A2 -------------------------------------- 
 
-/*  2 a */
-SELECT tab.prf.student.name FROM PruefungsergebnisTab tab WHERE tab.prf.note < 2.0 AND tab.prf.vorlesung.name = 'DBSYS';
+---   2 a --- 
+SELECT tab.student.name FROM PruefungsergebnisTab tab WHERE tab.note < 2.0 AND tab.vorlesung.name = 'DBSYS';
 
-/*  2 b */
+---   2 b --- 
 SELECT name FROM StudierenderTab tab WHERE tab.studiengang.fakultaet.dekan.name = 'Langweg';
 
-/*  2 c */
-SELECT p.name
-FROM TABLE((SELECT tab.professoren FROM FakultaetTab tab WHERE tab.name = 'Informatik')) p;
+---  2 c --- 
+SELECT p.COLUMN_VALUE.name AS Name
+FROM FakultaetTab f, table(f.professoren) p
+WHERE f.name = 'Informatik';
+
+--- A3 --- 
+--/
+CREATE OR REPLACE TYPE BODY StudierenderT AS
+        MEMBER FUNCTION getNotenschnitt RETURN FLOAT IS        
+                schnitt FLOAT;
+        BEGIN
+                SELECT AVG(tab.note) INTO schnitt FROM PruefungsergebnisTab tab WHERE tab.student.matrikelnummer = self.matrikelnummer;
+                RETURN schnitt;
+        END getNotenschnitt;
+END;
+/
+SELECT s.matrikelnummer, s.name, s.getNotenschnitt() as Notenschnitt
+FROM studierendertab s;
