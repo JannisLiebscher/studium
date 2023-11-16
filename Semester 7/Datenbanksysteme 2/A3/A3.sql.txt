@@ -237,7 +237,7 @@ CREATE OR REPLACE TYPE BODY StudierenderT AS
                 schnitt FLOAT;
         BEGIN
                 SELECT AVG(tab.note) INTO schnitt FROM PruefungsergebnisTab tab WHERE tab.student.matrikelnummer = self.matrikelnummer;
-                RETURN schnitt;
+                RETURN ROUND(schnitt, 2);
         END getNotenschnitt;
 END;
 /
