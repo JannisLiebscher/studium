@@ -1,0 +1,50 @@
+a)
+
+b)
+
+S1 Nein, weil Lost Update von w2(A) weil von w1(A)überschrieben
+
+S2 Sreiell, Serialisierbar wiel shcon in Reihenfolge
+ 
+S3 Equivalent zu T2 -> T1, weil kein write von T2
+
+S4 Nicht serialisierbar, incorrect summary
+	weil von T2 alte Daten und neue (w1(B)) gelesen werden
+
+c)
+
+S2 stimmt schon
+
+S3 ->  r2(A), r2(B), r1(B), r1(A), w1(A), w1(B)
+
+d)
+
+S1, w2(A) geht verloren weil von w1(A) überschrieben
+
+e)
+
+S1: Deadlock weil T1 und T2 kein X-Lock auf A erhalten,
+	wiel die jewiels andere Transaktion noch ein R-Lock hält
+
+S3: Kein Unterschied, wiel schon serialisierbar
+
+S4: Deadlock, weil T1 nicht A schreiben kann und T2 nicht B lesen kann (Locks)
+	-> Einer wird abgebrochen, evtl Rollback,
+	T2 liest entweder nur alte oder nur neue Werte -> wieder seriell
+  
+
+A2
+
+a)
+Ja, in der Summary gibt es 500€ mehr
+
+b)
+SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE
+Nun werden nur die alten Werte gelesen, als ob das Update nicht existieren würde
+
+c)
+Sperrverhalten hätte dazu geführt das das Update erts nach der Summary ausgeführt wird.
+
+
+
+
