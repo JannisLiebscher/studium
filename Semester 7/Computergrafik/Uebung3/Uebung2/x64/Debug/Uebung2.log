@@ -1,0 +1,29 @@
+﻿  main.cpp
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(187,23): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(187,18): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(187,13): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(353,45): warning C4244: "Argument": Konvertierung von "T" in "int", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(353,31): warning C4244: "Argument": Konvertierung von "T" in "int", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(399,24): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(430,24): warning C4244: "=": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(621,19): warning C4566: Das durch den universellen Zeichennamen "\uFFFD" dargestellte Zeichen kann in der aktuellen Codepage (1252) nicht dargestellt werden.
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\vec.h(247,19): warning C4244: "=": Konvertierung von "float" in "T", möglicher Datenverlust
+          with
+          [
+              T=int
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\vec.h(240,19): message : beim Kompilieren der Klasse Vorlage-Memberfunktion "CVector<int,2> CVector<int,2>::operator -(void)"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(479,66): message : Ersten Verweis auf "CVector<int,2>::operator -" in "timer" anzeigen
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\Uebung2\main.cpp(47,8): message : Siehe Verweis auf die gerade kompilierte Klasse Vorlage-Instanziierung "CVector<int,2>".
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Code wird generiert...
+  main.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
+  Uebung2.vcxproj -> C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung3\x64\Debug\Uebung2.exe

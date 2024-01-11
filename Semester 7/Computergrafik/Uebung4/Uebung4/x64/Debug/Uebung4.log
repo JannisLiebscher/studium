@@ -1,0 +1,100 @@
+﻿  Uebung4.cpp
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(54,17): warning C4305: "Initialisierung": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(55,17): warning C4305: "Initialisierung": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(56,17): warning C4305: "Initialisierung": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(65,27): warning C4305: "Argument": Verkürzung von "double" in "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(66,35): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(66,30): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(66,25): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(69,38): warning C4305: "Argument": Verkürzung von "double" in "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(69,33): warning C4305: "Argument": Verkürzung von "double" in "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(69,28): warning C4305: "Argument": Verkürzung von "double" in "T"
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(81,40): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(81,34): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(81,28): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(82,40): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(82,34): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(82,28): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(83,41): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(83,35): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(83,29): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(86,41): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(86,35): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(86,29): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(87,41): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(87,35): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(87,29): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(88,42): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(88,36): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(88,30): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(104,30): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(104,16): warning C4244: "Initialisierung": Konvertierung von "double" in "const float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(105,43): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(105,16): warning C4244: "Initialisierung": Konvertierung von "double" in "const float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(107,31): warning C4244: "Initialisierung": Konvertierung von "double" in "float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(107,16): warning C4244: "Initialisierung": Konvertierung von "double" in "const float", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(166,28): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(170,24): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(172,28): warning C4244: "Argument": Konvertierung von "double" in "T", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(188,37): warning C4244: "Argument": Konvertierung von "int" in "T", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(189,36): warning C4244: "Argument": Konvertierung von "int" in "T", möglicher Datenverlust
+          with
+          [
+              T=float
+          ]
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(250,43): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(250,25): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(252,42): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(252,24): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(254,41): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(254,24): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(256,42): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(256,25): warning C4244: "Argument": Konvertierung von "int" in "GLfloat", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(284,27): warning C4244: "=": Konvertierung von "double" in "char", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(285,31): warning C4244: "=": Konvertierung von "double" in "char", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(286,31): warning C4244: "=": Konvertierung von "double" in "char", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(299,46): warning C4244: "=": Konvertierung von "double" in "char", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(300,50): warning C4244: "=": Konvertierung von "double" in "char", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(301,50): warning C4244: "=": Konvertierung von "double" in "char", möglicher Datenverlust
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(333,37): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(333,31): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(334,37): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(334,31): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(335,34): warning C4305: "Argument": Verkürzung von "double" in "float"
+C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\Uebung4\Uebung4.cpp(336,34): warning C4305: "Argument": Verkürzung von "double" in "float"
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Code wird generiert...
+  Uebung4.obj : MSIL-Modulgefunden; inkrementelles Verknüpfen wird für MSIL deaktiviert; vollständiger Link wird durchgeführt
+  Uebung4.vcxproj -> C:\Users\Jannis\Documents\Studium\Semester 7\Computergrafik\Uebung4\x64\Debug\Uebung4.exe
