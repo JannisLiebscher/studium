@@ -1,0 +1,157 @@
+Klausur WS 22
+
+A1
+
+a)
+CREATE TABLE Verkauf_3DC (
+	landK VARCHAR(30),
+	landP VARCHAR(30),
+	jahr INT,
+	anzahl INT,
+	umsatz INT);
+	
+b)
+INSERT INTO Verkauf_3DC (
+	SELECT k.Land, p.land, EXTRACT(year from v.verkDatum)
+	SUM(v.anzahl), sum(v,anzahl * p.preis)
+	FROM Kunde k, Produkt p, Verkauf v
+	WHERE k.KundenNr = v.Kunde AND p.produktNr = v.produktNr
+	GROUp BY CUBE(k.land, p.land, EXTRACT(year from v.verkDatum);
+	
+c)
+SELECT * FROM(
+	SELECT Land k, Land p, umsatz
+		FROM Verkauf_3DC
+		WHERE jahr IS NULL
+		AND Land k IS NOT NULL
+		AND Land p IS NOT NULL
+	)
+PIVOT(
+	SUM(umsatz)
+	FOR Land k
+	IN(
+		'Deutschland' AS 'Kunden Deutschland',
+		'Schweiz' AS 'Kunden Schweiz',
+		'Österreich' AS 'Kunden Österreich'
+	)
+);
+
+A2
+
+Least Privilege
+Input Validation
+Prepared Statements
+
+A3
+
+a)
+SELECT v.artikel.name, count(*) AS anzahl
+	FROM VerkaufTab v
+	GROUP BY v.artikel.name
+
+b)
+SELECT k.name
+	FROM KundeTab k, TABLE(k.kaufliste) l
+	WHERE l.column_value.artikel.name = 'IPhone'
+
+c)
+SELECT k.name, count(*)
+	FROM KundeTab k, TABLE(k.kaufliste) l
+	GROUP BY k.name
+	
+A4
+
+a)Genaue Objekt Instanz durch Factory gekapselt, kann ausgetauscht werden
+
+b)Typsicherheit
+
+c)Wenn man weiß, das man alle Verbindungsobjekte sofort benötigt
+
+A5
+
+a)
+r1(B); r1(A); r2(A); w1(A); r2(B); w2(A)
+w1(A) wird überschrieben
+
+b)
+Nein, da B nur gelesen wird
+
+c)
+Ja, T1, T2 / T2, T1
+
+d)
+r2(A); r2(B); r1(B); w2(A); r1(A); w1(A)
+r2(A); r1(B); r2(B); w2(A); r1(A); w1(A)
+
+A6
+
+a)
+Korrelierte Unterabfrage
+
+SELECT DISTINCT a.ort
+	FROM Abt a
+	WHERE NOT IN (SELECT anr FROM pers WHERE jahrg <= 1990)
+
+b)
+Index nicht verwendet wegen EXTRACT
+
+SELECT DISTINCT beruf
+	FROM Pers
+	WHERE eindat BETWEEN(TO_DATE('2021.01.01'), TO_DATE('2021.31.12'))
+	
+c)
+DISTINCT überflüssig, da pnr eindeutig
+
+SELECT pnr, name, eindat
+FROM Pers
+WHERE SYSDATE-eindat > (SELECT AVG(SYSDATE-eindat) FROM Pers);
+
+d)
+JOIN ist überflüssig, da man nur die anr braucht,
+	die schon in pers enthalten ist
+
+SELECT COUNT(DISTINCT b.anr) AS Anzahl
+	FROM Pers p
+	WHERE p.beruf = 'Programmierer';
+
+e)
+Index auf Fremdschlüssel macht JOIN schneller (hier nicht relevant)
+Index auf v.datum, da sehr viel Vorführungen v und viele verschiedene Werte fürs Datum
+
+A7
+
+a)CA
+
+b)AP
+
+A8
+
+a)
+db.versicherung.find({preis: {$lt: 100}}, {vname: 1}, {_id: 0})
+
+b)
+db.abschluss.find(
+	{"versicherung.$id": 
+		db.versicherung.findOne({name: 'Haftpflicht'})._id,
+	"Kunde.$id": 
+		db.kunde.findOne({name: "Maier"})._id
+).count()
+
+c)
+db.abschluss.aggregate([
+	{
+		$match: {"abschlussjahr": {$gte: 2017}}
+	},
+	{
+		$group: {
+		  _id: "$abschlussjahr",
+		  abschlussAnzahl: { $sum: 1 }
+		}
+    },
+	{ 
+		$sort: { "abschlussAnzahl": -1 } },
+	},
+]);
+
+d)
+Welche Versicherung wurde im Jahr 2022 wie oft abgeschlossen?
