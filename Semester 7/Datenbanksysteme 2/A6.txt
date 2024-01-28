@@ -39,7 +39,7 @@ a)
 Ja, in der Summary gibt es 500€ mehr
 
 b)
-SET TRANSACTION ISOLATION LEVEL READ SERIALIZABLE
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE
 Nun werden nur die alten Werte gelesen, als ob das Update nicht existieren würde
 
 c)
