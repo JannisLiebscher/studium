@@ -1,0 +1,43 @@
+Kapitel 4 – Rendering and Visibility
+
+Visibility test - Komplex. der Szene für nachfolgende Schritte der Rendering-pipeline reduzieren.
+	-immediate change, in realtime
+Occulsion: Wenn 2 Punkte der 3D Szene auf einen Pixel im 2D-Space gemapped werden.
+
+Object space(für jedes Objekt) vs Image space(für jeden Pixel) Methods
+
+Back Face Culling: Rückseiten entfernen, also flächen, die vom Objekt selbst verdeckt werden.
+	Normal verwenden, skalarprodukt zwischen ViewDir und Normal (o	v * N > 0 = Invisible)
+	schnell, Komplexität -50%, nur bedingt möglich für  konkave Polyeder
+
+Frustum Culling: Testet Intersections zwischen View Frustum und Bounding Box/sphere des Objektes.
+
+Occlusion Culling: So Tun als würde man Bounding Box Rendern, gerenderte Pixel zählen. Falls null kann Objekt weg, 	ansonnsten nochmal genauer schauen.
+		Pop-in/pop-out effects in animations possible (Wenn Bounding Box von verdeckendem Objekt zu groß)
+
+Z-Buffer: Zusätzlicher Speicher, der für jeden Pixel kleinsten Z-Wert speichert. Initialisierung mit größstem Z-	Wert, Frame Buffer mit Hintergrundfarbe. Neues Objekt rendern: Z-Buffer checken, wo es verdeckt wird. Z-		Werte mit ebenengleichung Inkrementel berechnen: Tiefen Koherenz
+	Probleme: Weit entfernte objekte, Z-Buffer AUflösung zu klein.
+
+Alpha-Buffer: Wie Z-Buffer, für Transparency-Werte(0-1). Erstes Undurchsichtiges Objekt suchen, dann von hinten nach vorne.
+
+Ray-Casting: Strahl von Eye-Point durch ImagePlane casten, Intersections mit Objekten berechnen, nächstes Objekt 	ist an diesem Pixel sichtbar.
+	Für Schnittpunkt Geradengleichung(View-Ray) in Ebenen/Kugelgleichung einsetzen und auflösen
+
+Ray Casting ist sehr aufwendig. Back-Face Culling und Boundign Boxes reduzieren Komplexität.
+Transform the rays onto the 𝑧-axis: Schnittpunkt immer bei x=y=0 => einfacher zu berechnen.
+Vermeidung unnötiger Berechnungen durch verwendung von hierachischen Datenstrukturen.
+
+Illumination Model: Wie berechne ich an einem bestimmten Punkt die Intensity(Farbe) Eines Pixels?
+Shading Model: Wann und wo wird Illumination Model ausgewertet?
+
+Phong Illumination: = specular component, diffuse component, ambient light
+	specular und diffuse hängen vom EInfallswinkel des Lichts ab
+Ambient: Ambient Light Intensitiy * Ambient Component
+Diffuse: Light Intensity * L*N (Skalar) * Diffuse Component
+Specular: Light Intensity * V*R^n (Skalar) * Diffuse Component	(großes n = Spiegel)
+Phong wird für jede Farbe (RGB) angewandt
+
+(Blinn-Illumination model. Verwendet Halbvektor, ist effizienter, aber nur Annäherung an Phong)
+
+Sieht Plastik-Like aus. Keine Interaktion(Mirror-Image etc)
+
