@@ -1,0 +1,127 @@
+ Secure by Design
+	Security von anfang an eingeplant, nicht später ergänzen
+ Defense in Depth
+	Mehrere Ebenen, wenn eine gebrochen wird bleiben die anderen wirksam
+ Mission-Driven Security
+	Sich mit der konkreten Gefahr auseinander setzen und nicht generische Checklist abarbeiten
+ Least Privilege
+	Nutzern und Komponenten nur so viele Rechte/Privilegien vergeben wie unbedingt nötig
+ Isolation
+	Geteilte Resourcen vermeiden
+ Keep It Simple, Stupid (KISS)
+	Keine komplexe Security
+ Composability and Modularity
+	Modulare und austauschbare Komponenten um im Falle eines Security Risikos handeln zu können
+ Fail-Safe Defaults
+	Degaults sollten sicher sein, für Leute, die sich damit nicht auseinander setzen.
+ Fail-Operational Design
+	Wenn etwas nicht funktioniert soll es einen Sicheren Fallback haben
+ Reconfigurability & Autonomous Recovery
+ 	Systeme sollen ohne menschliches Eingreifen wieder (sicher) starten können
+ Auditability, Traceability & Logging
+	Sicherheitsrisikos nachverfolgen können
+ Rigorous Testing
+	Testen halt
+
+
+Task 1
+ Least Privilege
+	Admin für bestimmten Bereich ist nicht root -> Kompromittiert Account nicht so tragisch
+	Trade-off: Admin kann weniger Aufgaben erfüllen
+ Isolation
+	Chat GPT führt Code in Sandbox aus
+	Trade-off: keiner
+ Fail-Safe Defaults
+	Spring Boot default Passwort: Immer anders, lang und komplex
+	Trade-off: keiner
+
+Task 2
+	- Isolation (Access Control + Architecture)
+	- Least Privilege (Policy)
+	- Secure by Design (Architecure + access control + policy)
+
+Task 3
+	
+a)	Creds in Source Code
+	Debug Logging 
+	Admin Accounts for everyday operation: Least Privilege
+b)	Dont
+c)	Rigorous Testing/Review	
+
+Task 4
+
+Task 5
+a)	Something I know: Password
+	Something I Have: Card
+	Something I am: Face
+
+b) 	I know + i have: Card reader reads card, Computer reads password
+	Face not possible
+
+c)	A -> Fingerprint can be used in addition to face
+	B -> No change, cant use fingerprint without sensor/reader
+
+Task 6
+
+
+ 1. Which statements are correct?
+ A) Symmetric algorithms use the same key for encryption and decryption. -> Correct
+ B) Asymmetric algorithms use different key pairs (public / private). -> Correct
+ C) Symmetric algorithms are computationally more expensive than asymmetric ones. -> Incorrect
+ D) Asymmetric algorithms are particularly suitable for large amounts of data. -> Incorrect
+ E) Symmetric algorithms are usually faster in practice. -> Correct
+
+
+ 2. Which properties should a cryptographic hash function have?
+ A) Collision resistance -> Correct
+ B) Pre-image resistance -> Correct
+ C) One-Way -> Correct
+ D) Reversibility ?
+ E) Constant output length -> Correct
+
+
+3. Which statements are correct?
+ A) A digital signature proves the authenticity and integrity of a message. -> Correct
+ B) Digital signatures are usually based on asymmetric cryptography. -> Correct
+ C) A digital certificate contains the private key of the owner.  -> Incorrect
+ D) Certificates are signed by certification authorities (CAs). -> Correct
+ E) Certificates are used for secure key distribution. -> Incorrect
+
+4.Assign each cryptographic technique to its typical use case. Which combinations are correct?
+ A) Password storing– Hash function with salt -> Correct
+ B) Digital signatures – Proof of integrity and authenticity -> Correct
+ C) Asymmetric encryption – Secure exchange of secret keys or messages -> Correct
+ D) Symmetric encryption – Efficient protection of large amounts of data -> Correct
+
+Task 7
+h1 144 p1 000000012
+h2 113 p2 000000025
+h3 161 p3 000000047
+
+B) Wenige Permutationen
+C) Kollisionen, Einfach Rückrechenbar
+D) Höherer Mod, Längere Zahlen
+
+Task 8
+ A web application “PhotoCreative” wants to take advantage of the fact that many users already have an
+ account with “YourCloud”, where their photos are stored.
+ The developers of PhotoCreative want to avoid storing user photos themselves and instead access them
+ through the user’s existing YourCloud account.
+
+ A) Is this a use case for OAuth or OpenID Connect (OIDC)?
+ Explain your answer. 
+	OAuth 2.0, weil Zugriff auf geschützte REsorucen eines Users
+ B) Draw the Authorization Code Flow for the interaction between PhotoCreative and YourCloud.
+ Highlight the exchange of tokens in your diagram.
+	
+ C) Assume an attacker can eavesdrop on the HTTP traffic between the user and YourCloud (i.e., HTTPS is
+ not used). What could the attacker achieve in this situation?
+	Get Auth Code, Receive Access Token, get Photos
+ D) Discuss the difference between an Access Token and an ID Token in OIDC.
+ Provide an example of when each one is used.
+	Berechtigungstoken um geshcützte Resorucen abzurufen
+	ID Token: Bestätigt Identität des Nutzers
+ E) Assume PhotoCreative wants to enforce multi-factor authentication (MFA) at YourCloud.
+ How would this change the flow? What are the security benefits of this modification
+	
+	

@@ -1,0 +1,50 @@
+
+VLM - Visual Language Model
+RL - Reinforced Learning (online vs offline)
+Samples, Reasoning Steps
+STF - Supervised Fine Tuning
+
+Align with human values and expectations vs creativity, helpfulness, and reasoning.
+
+VLM guard models = AI Firewall
+
+The existing VLM guard models are trained to output only classification
+results. Although effective, they lack interpretability, as the models do not justify their decisions.
+
+Goal: Reasoning Based VLM guard models
+
+Challenges: Limited Data, Offline Training, Token Efficency
+
+GuardReasoner-VL:
+123K samples (Datensatz mit Prompt + erwünschte ausgabe) Prompt = Text/Image/Text+Image
+631K reasoning steps (Erwünschte Zwischenschritte von Prompt zu Antwort)
+
+Training Pipeline:
+	Model Cold Start with Samples 
+	Data Concatenation (Kombination von Prompts)
+	Online RL
+	
+Detail:
+Reasoning Supervised Fine-Tuning (R-SFT)
+Data Concatenation/Augmentation
+Group relative policy optimization (GRPO) Mehrere Antworten relativ zueinander bewerten
+	Omit KL divergence loss ("Strafe" für abweichende Verteilung der Antworten)
+Dynamic clipping parameter: Gewichte werden im frühen Stadium stark aktualisiert, später schwächer
+
+Reward Design:
+Reward für Antwort Format( <think> Reasoning Steps <\think> <result> Ergebnis (harmfull/unharmfull)<\result>
+Reward für mehr Reasoning Steps bei falscher Antwort mit cutoff
+
+Ergebnisse:
+GuardReasoner und andere Modelle auf den Datensatz loslassen, Richtige Klassifizierungen zählen (F1 Score)
+GuardReasoner bei ~75%, andere Modelle bei 50-60%
+
+Ablation Study (Auswertung nach bestimmter Stufe)
+Insgesamt kleine Unterschiede, gerade Online RL im Bereich 77-79%
+STF = Auf kombinierten Daten
+R-STF = angeblich auch, aber wie ist das Möglich?
+	R-STF auf jeweils Text/Image/Text+Image alleine liegen jeweils darunter.
+Interessant: Modell tut sich schwer mit reinen Images
+Unterschied zwischen 3B und 7B auch sehr gering (~0.5%)
+
+GuardReasoner-VL-Eco 1-2% Verlust im F1 Score, dafür ~10% weniger tokens
